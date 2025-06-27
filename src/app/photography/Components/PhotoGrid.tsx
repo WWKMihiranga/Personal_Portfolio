@@ -1,5 +1,6 @@
 import React, { useCallback, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import {
   FaHeart,
   FaEye,
@@ -91,7 +92,7 @@ const PhotoCard = memo(function PhotoCard({
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
       viewport={{ once: true, margin: "50px" }}
       whileHover={{ y: -12, scale: 1.03 }}
-      className="group relative overflow-hidden rounded-3xl dark:rounded-none bg-white dark:bg-black shadow-lg hover:shadow-2xl dark:shadow-[#ff0000]/60 border border-[#A9C8DA] dark:border-[#ff00ff] hover:border-[#6693B2] dark:hover:border-[#00ff00] transition-all duration-500 cursor-pointer dark:animate-pulse"
+      className="group relative overflow-hidden rounded-3xl dark:rounded-none bg-white dark:bg-black shadow-lg hover:shadow-2xl hover:dark:shadow-[#ffffff]/90 dark:shadow-[#ff0000]/90 border border-[#A9C8DA] dark:border-[#ff0000] hover:border-[#6693B2] dark:hover:border-[#ffffff] transition-all duration-500 cursor-pointer dark:animate-pulse"
       onClick={handleClick}
       role="button"
       tabIndex={0}
@@ -100,44 +101,34 @@ const PhotoCard = memo(function PhotoCard({
     >
       {/* <FilmStripCorner /> */}
 
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden elect-none pointer-events-none">
         <LensReflectionEffect />
 
-        <img
+        <Image
           src={photo.src}
           alt={photo.alt}
+          width={1200}
+          height={800}
+          data-nosnippet
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-          loading="lazy"
-          decoding="async"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={85}
+          priority={false}
+          draggable={false}
         />
 
         <VignetteEffect />
-
         <CategoryBadge category={photo.category} index={index} />
-
         <LikeButton isLiked={isLiked} onClick={handleLikeClick} />
-
         <PhotoOverlay />
-
         <CameraSettingsOverlay />
       </div>
 
       <PhotoContent photo={photo} index={index} />
-
       <BottomGradientBar index={index} />
     </motion.div>
   );
 });
-
-// const FilmStripCorner = memo(function FilmStripCorner() {
-//   return (
-//     <div className="absolute top-0 right-0 w-8 h-12 bg-gradient-to-bl from-[#6693B2]/20 dark:from-[#ff00ff]/40 to-transparent z-10 pointer-events-none dark:animate-pulse">
-//       <div className="absolute top-1 right-1 w-1 h-1 bg-[#6693B2]/40 dark:bg-[#ff0000] dark:rounded-none rounded-full" />
-//       <div className="absolute top-3 right-1 w-1 h-1 bg-[#6693B2]/40 dark:bg-[#ff0000] dark:rounded-none rounded-full" />
-//       <div className="absolute top-5 right-1 w-1 h-1 bg-[#6693B2]/40 dark:bg-[#ff0000] dark:rounded-none rounded-full" />
-//     </div>
-//   );
-// });
 
 const LensReflectionEffect = memo(function LensReflectionEffect() {
   return (
@@ -202,9 +193,7 @@ const LikeButton = memo(function LikeButton({
       >
         <FaHeart
           className={`text-sm transition-colors duration-300 ${
-            isLiked
-              ? "text-white"
-              : "text-white dark:text-[#ff00ff] group-hover:text-red-400"
+            isLiked ? "text-white" : "text-white group-hover:text-red-400"
           }`}
         />
       </motion.div>
@@ -284,13 +273,13 @@ const PhotoContent = memo(function PhotoContent({
 }: PhotoContentProps) {
   return (
     <div className="p-6 relative">
-      <div className="absolute inset-0 opacity-[0.02] bg-gradient-to-br from-gray-900 via-transparent to-gray-900 dark:from-[#ff0000] dark:via-transparent dark:to-[#ff00ff] pointer-events-none dark:animate-pulse" />
+      <div className="absolute inset-0 opacity-[0.02] bg-gradient-to-br from-gray-900 via-transparent to-gray-900 dark:via-transparent pointer-events-none dark:animate-pulse" />
 
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-3">
           <motion.h3
             whileHover={{ x: 4 }}
-            className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-[#6693B2] dark:group-hover:text-[#ff00ff] transition-all duration-300 cursor-pointer"
+            className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-[#6693B2] dark:group-hover:text-[#ffff00] transition-all duration-300 cursor-pointer"
           >
             {photo.title}
           </motion.h3>
@@ -365,7 +354,7 @@ const BottomGradientBar = memo(function BottomGradientBar({
 }: BottomGradientBarProps) {
   return (
     <div className="relative h-1 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#6693B2] via-[#E57986] to-[#A45F7B] dark:from-[#ff00ff] dark:via-[#00ff00] dark:to-[#ff0000] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-[#6693B2] via-[#E57986] to-[#A45F7B] dark:from-[#ff00ff] dark:via-[#00ff00] dark:to-[#ff0000] opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> */}
       <motion.div
         initial={{ x: "-100%" }}
         whileInView={{ x: "100%" }}

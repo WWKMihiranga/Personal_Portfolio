@@ -20,7 +20,6 @@ import {
 } from "react-icons/si";
 import Link from "next/link";
 
-// Sample project type - replace with your actual Project type
 type Project = {
   id: string;
   slug: string;
@@ -40,7 +39,6 @@ type Props = {
   project: Project;
 };
 
-// Enhanced tech icons with consistent colors
 const techIcons: Record<string, JSX.Element> = {
   TypeScript: (
     <SiTypescript className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
@@ -61,7 +59,6 @@ const techIcons: Record<string, JSX.Element> = {
   Python: <SiPython className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />,
 };
 
-// Sample project data for demonstration
 const sampleProject: Project = {
   id: "1",
   slug: "portfolio-website",
@@ -85,7 +82,6 @@ export default function ProjectCard({ project = sampleProject }: Props) {
   };
 
   const handleCardClick = () => {
-    // Replace with your actual navigation logic
     console.log(`Navigate to /projects/${project.slug}`);
   };
 
@@ -105,7 +101,6 @@ export default function ProjectCard({ project = sampleProject }: Props) {
         {/* Featured Badge */}
         {project.featured && (
           <div className="absolute top-4 left-4 z-20">
-            {/*Apply this to lets talk button */}
             <div className="flex items-center px-3 py-1.5 bg-[#E57986] dark:bg-red-700 rounded-full dark:rounded-none text-white dark:text-white text-xs font-bold shadow-lg dark:shadow-red-500 animate-none dark:animate-pulse">
               <FiStar className="w-3 h-3 mr-1" />
               Featured
@@ -130,7 +125,7 @@ export default function ProjectCard({ project = sampleProject }: Props) {
           </div>
         )}
 
-        {/* Project Image with Enhanced Overlay */}
+        {/* Project Image */}
         <div
           className="relative h-45 sm:h-48 md:h-50 w-full overflow-hidden dark:animate-pulse"
           onClick={handleCardClick}
@@ -146,30 +141,31 @@ export default function ProjectCard({ project = sampleProject }: Props) {
               loading="lazy"
             />
 
-            {/* Enhanced gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300 dark:bg-gradient-to-t dark:from-red-900/80 dark:via-black dark:to-transparent" />
 
             {/* Tech Stack Pills */}
-            <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-2 sm:left-3 md:left-4 right-2 sm:right-3 md:right-4">
-              <div className="flex flex-wrap gap-2">
-                {project.tech.slice(0, 4).map((tech) => (
+            {/* <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 md:bottom-4 md:left-4 md:right-4">
+              <div className="flex flex-wrap gap-1 sm:gap-2 overflow-x-auto pb-1">
+                {" "} */}
+            {/* Overflow handling */}
+            {/* {project.tech.slice(0, 4).map((tech) => (
                   <span
                     key={tech}
-                    className="flex items-center gap-1.5 bg-white/95 dark:bg-black/90 backdrop-blur-sm px-3 py-1.5 rounded-full dark:rounded-none text-xs font-bold text-gray-800 dark:text-[#ff0000] shadow-lg border border-white/20 dark:border-red-800"
+                    className="flex-shrink-0 flex items-center gap-1.5 bg-white/95 dark:bg-black/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1.5 rounded-full dark:rounded-none text-xs font-bold text-gray-800 dark:text-[#ff0000] shadow-lg border border-white/20 dark:border-red-800"
                   >
                     {techIcons[tech] && <span>{techIcons[tech]}</span>}
                     {tech}
                   </span>
                 ))}
                 {project.tech.length > 4 && (
-                  <span className="flex items-center bg-white/95 dark:bg-black/90 backdrop-blur-sm px-3 py-1.5 rounded-full dark:rounded-none text-xs font-bold text-gray-600 dark:text-white shadow-lg border border-white/20 dark:border-[#ff00ff]">
+                  <span className="flex-shrink-0 flex items-center bg-white/95 dark:bg-black/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1.5 rounded-full dark:rounded-none text-xs font-bold text-gray-600 dark:text-white shadow-lg border border-white/20 dark:border-[#ff00ff]">
                     +{project.tech.length - 4} more
                   </span>
                 )}
               </div>
-            </div>
+            </div> */}
 
-            {/* Decorative corner element */}
+            {/* Decorative element */}
             <div className="absolute top-0 right-0 w-20 h-20 opacity-10">
               <div className="w-full h-full bg-[#6693B2] dark:bg-[#ff0000] rounded-full dark:rounded-none transform translate-x-10 -translate-y-10 dark:animate-ping"></div>
             </div>
@@ -231,7 +227,7 @@ export default function ProjectCard({ project = sampleProject }: Props) {
               )}
             </div>
 
-            {/* View Project Link */}
+            {/* Project Link */}
             <Link
               href={`/projects/${project.slug}`}
               className="block relative z-10"

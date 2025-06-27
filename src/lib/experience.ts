@@ -1,17 +1,17 @@
 import { JSX } from "react";
 
-export const EXPERIENCE_TYPES = ['All', 'Full-time', 'Contract', 'Internship'] as const;
+export const EXPERIENCE_TYPES = ["All", "Full-time", "Contract"] as const;
 
 export interface ExperienceItem {
   role: string;
   company: string;
   location: string;
   period: string;
-  type: 'Full-time' | 'Contract' | 'Internship';
+  type: "Full-time" | "Contract" | "Internship";
   description: string;
   techStack: string[];
   accomplishments: string[];
-  image: string
+  image: string;
 }
 
 export interface ExperienceCardProps {
@@ -29,39 +29,51 @@ export interface ExperienceSummaryCardProps {
   color: string;
   darkColor: string;
   delay: number;
-  direction?: 'x' | 'y';
+  direction?: "x" | "y";
   xDirection?: number;
 }
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
-    role: 'Frontend Developer',
-    company: 'Tech Company',
-    location: 'Remote',
-    period: '2024 - Present',
-    type: 'Full-time',
-    description: 'Developed modern web applications using React and TypeScript, focusing on user experience and performance optimization.',
-    techStack: ['React', 'TypeScript', 'Node.js'],
-    accomplishments: [
-      'Improved application performance by 40% through code optimization',
-      'Led the migration to TypeScript across 5 major projects',
-      'Mentored junior developers in modern React patterns'
+    role: "Software Engineer",
+    company: "Fintelex Pvt Ltd",
+    location: "Remote",
+    period: "June 2024 - June 2025",
+    type: "Full-time",
+    description:
+      "Led the development of a cross-platform mobile application and contributed to frontend systems using Flutter and React. Collaborated closely with designers and participated in agile product cycles.",
+    techStack: [
+      "Flutter",
+      "React",
+      "Figma",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
     ],
-    image: '/projects.jpg',
+    accomplishments: [
+      "Spearheaded the design and development of a mobile app from concept to deployment under senior supervision",
+      "Built high-performance Flutter components with responsive UI and smooth animations",
+      "Implemented reusable React components to ensure frontend consistency and reduce development time",
+      "Collaborated with designers in Figma to refine user flows and improve accessibility",
+      "Maintained clean, testable code and participated in code reviews and agile sprint planning",
+    ],
+    image: "/fintelex.jpg",
   },
   {
-    role: 'Full Stack Developer',
-    company: 'Startup Inc',
-    location: 'San Francisco, CA',
-    period: '2023 - 2024',
-    type: 'Contract',
-    description: 'Built scalable web applications from concept to deployment, working with modern technologies and agile methodologies.',
-    techStack: ['Python', 'React', 'Three.js'],
+    role: "Frontend Developer",
+    company: "Codez Solutions",
+    location: "Aluthwala, Sri Lanka",
+    period: "2023 - 2024",
+    type: "Contract",
+    description:
+      "Worked on web and mobile applications for clients in diverse industries. Focused on responsive design, component-based development, and cross-platform mobile solutions.",
+    techStack: ["Next.js", "Tailwind CSS", "Flutter", "MongoDB", "Firebase"],
     accomplishments: [
-      'Designed and implemented RESTful APIs serving 10k+ users',
-      'Created interactive 3D visualizations using Three.js',
-      'Reduced deployment time by 60% through CI/CD automation'
+      "Developed responsive marketing and tourism websites using Next.js and Tailwind CSS",
+      "Built and styled landing pages and corporate sites optimized for SEO and speed",
+      "Contributed to cross-platform Flutter applications with pixel-perfect UI and Firebase integration",
+      "Collaborated with designers and clients to translate UI/UX prototypes into functional code",
+      "Helped maintain and scale projects using GitHub Actions and cloud platforms like DigitalOcean",
     ],
-    image: '/projects.jpg',
-  }
+    image: "/codez.jpg",
+  },
 ];

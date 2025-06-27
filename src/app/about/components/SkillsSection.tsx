@@ -90,7 +90,6 @@ const STATS_DATA: Stat[] = [
   },
 ];
 
-// Reusable components
 const BackgroundElements = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <div className="absolute top-10 right-20 w-20 h-20 border-2 border-[#A9C8DA] dark:border-[#ff0000] rounded-full dark:rounded-none opacity-30 dark:animate-pulse"></div>
@@ -269,7 +268,7 @@ const SkillsSection: React.FC = () => {
       >
         <SectionHeader />
         <SkillsGrid />
-        <SummaryStats />
+        {/* <SummaryStats /> */}
       </motion.div>
     </div>
   );

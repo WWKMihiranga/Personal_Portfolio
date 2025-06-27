@@ -33,7 +33,7 @@ const ExperienceSummaryCard: React.FC<ExperienceSummaryCardProps> = ({
     <div
       className={`w-12 h-12 ${color} ${darkColor} rounded-full dark:rounded-none flex items-center justify-center mx-auto mb-4 dark:animate-spin-slow`}
     >
-      <span className="text-white dark:text-[#00ffff] font-bold dark:font-extrabold text-lg">
+      <span className="text-white dark:text-[#000000] font-bold dark:font-extrabold text-lg">
         {value}
       </span>
     </div>

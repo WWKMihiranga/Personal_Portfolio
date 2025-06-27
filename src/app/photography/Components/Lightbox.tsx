@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import {
   FaTimes,
   FaChevronLeft,
@@ -39,7 +40,7 @@ export default function Lightbox({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 overflow-auto"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -50,7 +51,7 @@ export default function Lightbox({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="relative max-w-4xl w-full bg-white dark:bg-black rounded-3xl dark:rounded-none overflow-hidden shadow-2xl dark:shadow-[0_0_40px_#ff0000] dark:animate-pulse"
+            className="relative w-full h-auto max-w-6xl mx-auto max-h-screen overflow-y-auto bg-white dark:bg-black rounded-3xl dark:rounded-none shadow-2xl dark:shadow-[0_0_40px_#ff0000] dark:animate-pulse"
             onClick={(e) => e.stopPropagation()}
           >
             <CloseButton onClick={onClose} />
@@ -67,20 +68,31 @@ export default function Lightbox({
               className="right-4"
             />
 
-            <div className="grid md:grid-cols-2 h-full">
-              <div className="relative aspect-square md:aspect-auto dark:animate-puls">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover"
-                />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 p-6 max-h-full w-full">
+              <div className="w-full md:w-auto flex justify-center">
+                <div className="relative w-full h-auto max-h-[80vh] elect-none pointer-events-none">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={1200}
+                    height={800}
+                    data-nosnippet
+                    className="object-contain rounded-2xl"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
+                    style={{ maxHeight: "80vh", height: "auto", width: "100%" }}
+                    priority={false}
+                    draggable={false}
+                  />
+                </div>
               </div>
 
-              <LightboxContent
-                photo={photo}
-                isLiked={likedPhotos.has(photo.title)}
-                onLikeClick={onLikeClick}
-              />
+              <div className="w-full md:max-w-sm flex-shrink-0">
+                <LightboxContent
+                  photo={photo}
+                  isLiked={likedPhotos.has(photo.title)}
+                  onLikeClick={onLikeClick}
+                />
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -148,7 +160,7 @@ function LightboxContent({
                 className={`text-sm ${
                   isLiked
                     ? "text-red-500 dark:animate-pulse"
-                    : "text-[#A45F7B] dark:text-[#ff00ff]"
+                    : "text-[#A45F7B] dark:text-[#ffffff]"
                 }`}
               />
             </button>
@@ -168,7 +180,7 @@ function LightboxContent({
           {photo.title}
         </h2>
 
-        <p className="text-gray-600 dark:text-[#ff00ff] mb-6 leading-relaxed dark:font-semibold">
+        <p className="text-gray-600 dark:text-[#ffff00] mb-6 leading-relaxed dark:font-semibold">
           {photo.story}
         </p>
 
@@ -179,7 +191,7 @@ function LightboxContent({
         />
       </div>
 
-      <CameraSettings settings={photo.settings} />
+      {/* <CameraSettings settings={photo.settings} /> */}
     </div>
   );
 }

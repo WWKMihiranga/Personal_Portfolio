@@ -56,7 +56,7 @@ export default function PhotographyHeader({
         viewport={{ once: true }}
         className="text-lg text-gray-600 dark:text-[#ffffff] max-w-2xl mx-auto dark:animate-pulse mb-10"
       >
-        Capturing moments through my lens — landscapes, portraits, and stories
+        Capturing moments through my lens - landscapes, portraits, and stories
         from my travels. A glimpse into my world as a passionate photographer.
       </motion.p>
 

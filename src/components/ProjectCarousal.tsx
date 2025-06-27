@@ -262,13 +262,9 @@ export default function ProjectCarousel({ projects }: Props) {
               viewport={{ once: true }}
               className="mt-8 mb-6"
             >
-              <div
-                className="w-full h-2 bg-[#F1E8DF] dark:bg-[#ffffff] rounded-full dark:rounded-none overflow-hidden"
-                // style={{ backgroundColor: "#F1E8DF" }}
-              >
+              <div className="w-full h-2 bg-[#F1E8DF] dark:bg-[#ffffff] rounded-full dark:rounded-none overflow-hidden">
                 <motion.div
                   className="h-full relative bg-[#6693B2] dark:bg-[#ffff00] rounded-full dark:rounded-none"
-                  // style={{ backgroundColor: "#6693B2" }}
                   initial={{ width: 0 }}
                   animate={{
                     width: `${((currentIndex + 1) / projects.length) * 100}%`,
@@ -299,17 +295,11 @@ export default function ProjectCarousel({ projects }: Props) {
                       ? "bg-[#6693B2] border-[#6693B2] dark:bg-[#ff00ff] dark:border-[#ff00ff] dark:cursor-crosshair dark:animate-pulse dark:hover:animate-pulse"
                       : "bg-transparent border-[#A9C8DA] dark:border-[#00ffff] dark:animate-none"
                   }`}
-                  // style={{
-                  //   backgroundColor:
-                  //     index === currentIndex ? "#6693B2" : "transparent",
-                  //   borderColor: index === currentIndex ? "#6693B2" : "#A9C8DA",
-                  // }}
                   aria-label={`Go to project ${index + 1}`}
                 >
                   {index === currentIndex && (
                     <motion.div
                       className="absolute inset-1 rounded-full bg-white dark:bg-[#F1E8DF] dark:rounded-none"
-                      // style={{ backgroundColor: "#FFFFFF", opacity: 1 }}
                       layoutId="activeIndicator"
                       transition={{ duration: 0.3 }}
                     />
@@ -357,16 +347,7 @@ function ProjectCard({ project, isActive }: ProjectCardProps) {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="h-full"
     >
-      <div
-        className="rounded-xl sm:rounded-2xl lg:rounded-3xl dark:rounded-none shadow-lg lg:shadow-xl overflow-hidden h-full flex flex-col transition-all duration-500 hover:shadow-xl lg:hover:shadow-2xl border group relative bg-white dark:bg-black border-[#A9C8DA] dark:border-[#ff0000] dark:animate-pulse"
-        // style={{
-        //   backgroundColor: "#FFFFFF",
-        //   borderColor: "#A9C8DA",
-        // }}
-      >
-        {/* Background gradient effect */}
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#F1E8DF] dark:to-[#ff00ff] opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-3xl dark:rounded-none"></div> */}
-
+      <div className="rounded-xl sm:rounded-2xl lg:rounded-3xl dark:rounded-none shadow-lg lg:shadow-xl overflow-hidden h-full flex flex-col transition-all duration-500 hover:shadow-xl lg:hover:shadow-2xl border group relative bg-white dark:bg-black border-[#A9C8DA] dark:border-[#ff0000] dark:animate-pulse">
         <Link
           href={`/projects/${project.slug}`}
           className="block relative z-10"

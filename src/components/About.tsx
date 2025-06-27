@@ -55,24 +55,23 @@ const BioContent = () => {
     {
       content: (
         <>
-          I'm a Computer Science undergraduate with a passion for creating
+          I'm a Computer Science undergraduate driven by a deep curiosity in
           <span className="font-semibold text-[#A45F7B] dark:text-[#ff0000] dark:animate-pulse">
             {" "}
-            intuitive
+            AI, machine learning
           </span>
           ,
           <span className="font-semibold text-[#E57986] dark:text-[#ff00ff] dark:animate-pulse">
             {" "}
-            performant
+            mobile
           </span>
           , and
           <span className="font-semibold text-[#6693B2] dark:text-[#00ffff] dark:animate-pulse">
             {" "}
-            visually appealing
+            front-end
           </span>{" "}
-          web applications. My journey in technology began when I built my first
-          website at 15, and I've been fascinated by the intersection of code
-          and design ever since.
+          innovation. Since creating my first website at 15, I've loved crafting
+          intuitive, performant, and visually striking user experiences.
         </>
       ),
       className:
@@ -82,23 +81,28 @@ const BioContent = () => {
     {
       content: (
         <>
-          Currently, I'm focused on mastering modern web technologies like
+          Right now, I'm exploring
+          <span className="font-semibold text-[#A45F7B] dark:text-[#ff0000] dark:animate-pulse">
+            {" "}
+            machine learning models
+          </span>
+          , AI-driven apps, and mobile development with
+          <span className="font-semibold text-[#E57986] dark:text-[#ff00ff] dark:animate-pulse">
+            {" "}
+            Flutter
+          </span>
+          {" - "}
+          while sharpening my frontend stack with
           <span className="font-semibold text-[#6693B2] dark:text-[#00ffcc] dark:animate-pulse">
             {" "}
             Next.js
-          </span>
-          ,
-          <span className="font-semibold text-[#A45F7B] dark:text-[#ff00ff] dark:animate-pulse">
+          </span>{" "}
+          and
+          <span className="font-semibold text-[#6693B2] dark:text-[#00ffcc] dark:animate-pulse">
             {" "}
             TypeScript
           </span>
-          , and
-          <span className="font-semibold text-[#E57986] dark:text-[#ff0000] dark:animate-pulse">
-            {" "}
-            Three.js
-          </span>{" "}
-          to build immersive digital experiences. I believe in writing clean,
-          maintainable code while never compromising on user experience.
+          {"."}
         </>
       ),
       className:
@@ -107,7 +111,7 @@ const BioContent = () => {
     },
     {
       content:
-        "When I'm not coding, you can find me contributing to open-source projects, exploring new design trends, or experimenting with 3D web graphics.",
+        "Outside coding, I contribute to open-source, follow cutting-edge UX trends, and tinker with AI experiments and mobile UI concepts.",
       className:
         "flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-[#F1E8DF] dark:bg-[#0a0a0a] rounded-xl sm:rounded-2xl dark:rounded-none border border-[#FFBB94] dark:border-[#ff00ff] dark:animate-pulse",
       delay: 0.5,
@@ -221,17 +225,17 @@ export default function HeroSection() {
           viewport={{ once: true }}
           className="text-lg text-gray-600 dark:text-[#ffffff] max-w-2xl mx-auto dark:animate-pulse"
         >
-          Computer Science undergraduate passionate about crafting
-          <span className="font-medium text-[#A45F7B] dark:text-[#A99B8E]">
+          Computer Science undergraduate passionate about building
+          <span className="font-medium text-[#A45F7B] dark:text-[#ff0000]">
             {" "}
-            beautiful
+            smart
           </span>
           ,
-          <span className="font-medium text-[#E57986] dark:text-[#6C3B3F]">
+          <span className="font-medium text-[#E57986] dark:text-[#00ff00]">
             {" "}
-            functional
+            seamless
           </span>{" "}
-          digital experiences.
+          digital solutions.
         </motion.p>
       </motion.section>
 

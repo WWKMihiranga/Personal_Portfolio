@@ -24,32 +24,6 @@ export default function Hero() {
 
       {/* Main content */}
       <HeroContent />
-      {/* <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8"> */}
-      {/* <div className="grid lg:grid-cols-2 gap-12 items-center"> */}
-      {/* Left side - Text content */}
-      {/* </div> */}
-      {/* </div> */}
-
-      {/* Scroll indicator */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-sm text-[#A45F7B] dark:text-[#CFC6BD] font-medium">
-            Scroll Down
-          </span>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-[#A9C8DA] dark:border-[#A99B8E] rounded-full flex justify-center"
-          >
-            <div className="w-1 h-3 bg-[#6693B2] dark:bg-[#CFC6BD] rounded-full mt-2"></div>
-          </motion.div>
-        </div>
-      </motion.div> */}
     </section>
   );
 }

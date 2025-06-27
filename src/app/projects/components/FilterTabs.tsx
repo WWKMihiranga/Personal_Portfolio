@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { FaJava } from "react-icons/fa";
 import { FiFilter } from "react-icons/fi";
 import {
+  SiMysql,
   SiNextdotjs,
+  SiPython,
   SiReact,
   SiTailwindcss,
   SiThreedotjs,
@@ -13,10 +16,10 @@ import {
 export const techFilters = [
   { name: "All", icon: null },
   { name: "Next.js", icon: <SiNextdotjs className="w-4 h-4" /> },
-  { name: "React", icon: <SiReact className="w-4 h-4" /> },
+  { name: "Python", icon: <SiPython className="w-4 h-4" /> },
   { name: "TypeScript", icon: <SiTypescript className="w-4 h-4" /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="w-4 h-4" /> },
-  { name: "Three.js", icon: <SiThreedotjs className="w-4 h-4" /> },
+  { name: "Java", icon: <FaJava className="w-4 h-4" /> },
+  { name: "MySQL", icon: <SiMysql className="w-4 h-4" /> },
 ];
 
 interface FilterTabsProps {
@@ -45,16 +48,6 @@ export default function FilterTabs({
         viewport={{ once: true, margin: "-50px" }}
         className="mb-12 sm:mb-16"
       >
-        {/* Filter Header */}
-        {/* <div className="flex items-center justify-center mb-6 sm:mb-8">
-          <div className="flex items-center px-2 py-1 sm:px-3 sm:py-1 bg-[#F1E8DF] dark:bg-black border border-[#A9C8DA] dark:border-[#ff0000] rounded-full dark:rounded-none animate-none dark:animate-pulse">
-            <FiFilter className="w-3 h-3 sm:w-4 sm:h-4 text-[#6693B2] dark:text-[#00ffff] mr-1.5 sm:mr-2" />
-            <span className="text-xs sm:text-sm font-medium text-[#A45F7B] dark:text-[#ffffff] dark:font-bold dark:animate-shake">
-              Filter by Technology
-            </span>
-          </div>
-        </div> */}
-
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
           {techFilters.map((tech, index) => (

@@ -72,7 +72,7 @@ const ContactCard = ({
       className="group"
     >
       <div className="bg-white dark:bg-black p-8 rounded-3xl dark:rounded-none border border-[#A9C8DA] dark:border-[#ff0000] hover:border-[#6693B2] dark:hover:border-[#00ff00] transition-all duration-300 shadow-lg hover:shadow-xl text-center group-hover:scale-105 dark:animate-shake">
-        <div className="w-16 h-16 bg-[#A9C8DA] dark:bg-[#00ffff] rounded-2xl dark:rounded-none flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 dark:animate-bounce">
+        <div className="w-16 h-16 bg-[#A9C8DA] dark:bg-[#00ffff] rounded-2xl dark:rounded-none flex items-center justify-center mx-auto mb-6 group-hover:scale-110  transition-all duration-300 group-hover:rotate-6 dark:animate-bounce">
           <Icon className="w-8 h-8 text-[#6693B2] dark:text-[#ff00ff]" />
         </div>
 
@@ -269,10 +269,10 @@ export default function ContactSection() {
               </div>
             </div>
             <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-[#ffffff] leading-relaxed">
-              I'm always excited to work on new projects and collaborate with
-              amazing people. Whether it's a{" "}
+              I'm always excited to work on innovative projects and collaborate
+              with amazing people. Whether it's{" "}
               <span className="font-semibold text-[#6693B2] dark:text-[#ff00ff]">
-                web application
+                AI-powered apps
               </span>
               ,
               <span className="font-semibold text-[#A45F7B] dark:text-[#00ffff]">
@@ -282,9 +282,9 @@ export default function ContactSection() {
               , or
               <span className="font-semibold text-[#E57986] dark:text-[#ffff00]">
                 {" "}
-                creative digital experience
+                smart web experiences
               </span>
-              , let's make something incredible together!
+              , let's make something incredible together.
             </p>
           </div>
         </motion.div>

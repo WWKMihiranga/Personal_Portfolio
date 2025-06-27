@@ -16,7 +16,7 @@ import { use } from "react";
 import ThreeBackground from "@/components/ThreeBackground";
 import { FaArrowRight } from "react-icons/fa";
 
-// Constants for reusable values
+// Constants
 const COLORS = {
   light: {
     primary: "#6693B2",
@@ -57,11 +57,11 @@ const ANIMATION = {
 };
 
 interface ActionButtonProps {
-  href?: string; // Make it optional
+  href?: string;
   icon: React.ComponentType<{ className?: string }>;
   label: string;
   colorClass: string;
-  disabled?: boolean; // Add disabled state
+  disabled?: boolean;
 }
 
 type Params = {
@@ -165,7 +165,6 @@ const ActionButton = ({
 );
 
 export default function ProjectDetailPage({ params }: PageProps) {
-  // Unwrap the params Promise using React.use()
   const resolvedParams = use(params);
   const project = projects.find((p) => p.slug === resolvedParams.slug);
 
@@ -390,20 +389,6 @@ export default function ProjectDetailPage({ params }: PageProps) {
                 technologies and approaches
               </p>
 
-              {/* <Link href="/projects">
-                <motion.div
-                  whileHover={{
-                    y: -3,
-                    scale: 1.05,
-                    transition: { duration: 0.2, ease: "easeOut" },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group inline-flex items-center px-8 py-4 bg-[#6693B2] dark:bg-[#00ff00] text-white dark:text-[#000000] font-semibold rounded-2xl dark:rounded-none shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-                >
-                  View All Projects
-                  <FiArrowLeft className="w-4 h-4 ml-3 rotate-180 group-hover:translate-x-1 transition-transform duration-300 dark:animate-shake" />
-                </motion.div>
-              </Link> */}
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

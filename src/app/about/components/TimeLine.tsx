@@ -301,7 +301,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
   iconText,
   darkIconText,
 }) => (
-  <div className="text-center p-6 bg-[#F1E8DF] dark:bg-black rounded-2xl dark:rounded-none border border-[#A9C8DA] dark:border-[#ff00ff] hover:shadow-lg transition-all duration-300">
+  <div className="p-6 bg-[#F1E8DF] dark:bg-black rounded-2xl dark:rounded-none border border-[#A9C8DA] dark:border-[#ff0000] text-center hover:shadow-lg dark:hover:shadow-[#ff0000] transition-all duration-300 dark:animate-pulse">
     <div
       className={`w-12 h-12 ${iconBg} ${darkIconBg} rounded-full dark:rounded-none flex items-center justify-center mx-auto mb-4 dark:animate-bounce`}
     >
@@ -309,10 +309,10 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
         {count}
       </span>
     </div>
-    <h4 className="font-semibold text-gray-800 dark:text-[#ffff00] mb-2">
+    <h4 className="font-semibold text-gray-800 dark:text-[#ffffff] mb-2">
       {title}
     </h4>
-    <p className="text-sm text-gray-600 dark:text-[#CFC6BD]">{description}</p>
+    <p className="text-sm text-gray-600 dark:text-[#ff00ff]">{description}</p>
   </div>
 );
 
@@ -321,20 +321,20 @@ export default function TimeLine() {
   // Education timeline data
   const education: TimelineItem[] = [
     {
-      year: "2021 - Present",
-      degree: "BSc Computer Science",
-      institution: "Your University",
+      year: "2022 - Present",
+      degree: "BSc (Hons) in Computer Science",
+      institution: "University of Westminster (at IIT Sri Lanka)",
       description:
-        "Specializing in web development and human-computer interaction with focus on modern frameworks and user experience design.",
+        "Pursuing a comprehensive Computer Science degree with a focus on software engineering, web development, and AI. Expected graduation in 2026.",
       icon: "🎓",
       status: "current",
     },
     {
-      year: "2019 - 2021",
+      year: "2011 - 2020",
       degree: "High School Diploma",
-      institution: "Your High School",
+      institution: "Richmond College, Galle",
       description:
-        "Focus on mathematics and computer science fundamentals, building a strong foundation for technical studies.",
+        "Completed both O/Ls and A/Ls in the Physical Science stream. A/Ls: 3 B's (2021–22). O/Ls: 8 A's and 1 C pass (2017). Built a strong foundation in math, physics, and computer science.",
       icon: "📚",
       status: "completed",
     },
@@ -343,24 +343,24 @@ export default function TimeLine() {
   // Experience timeline data
   const experience: TimelineItem[] = [
     {
-      year: "2023 - Present",
-      role: "Frontend Developer Intern",
-      company: "Tech Company",
+      year: "2024 - 2025",
+      role: "Software Engineer",
+      company: "Fintelex Pvt Ltd",
       description:
-        "Building responsive UIs with React and Next.js, optimizing performance and implementing modern design patterns.",
+        "Led cross-platform mobile app development using Flutter, React, and Figma. Delivered scalable, responsive solutions with strong UI/UX focus under agile practices.",
       icon: "💼",
-      status: "current",
-      skills: ["React", "Next.js", "TypeScript"],
+      status: "completed",
+      skills: ["Flutter", "React", "Figma"],
     },
     {
-      year: "2022",
-      role: "Freelance Web Developer",
-      company: "Self-Employed",
+      year: "2023 - Present",
+      role: "Frontend Developer",
+      company: "Codez Solutions",
       description:
-        "Developed websites for small businesses and personal projects, focusing on modern web technologies and user experience.",
-      icon: "🚀",
-      status: "completed",
-      skills: ["HTML/CSS", "JavaScript", "WordPress"],
+        "Worked on client-facing web and mobile apps using Next.js, Flutter, and Tailwind CSS. Built responsive UIs and collaborated on scalable product development.",
+      icon: "💼",
+      status: "current",
+      skills: ["Next.js", "Flutter", "Tailwind CSS"],
     },
   ];
 
@@ -421,9 +421,9 @@ export default function TimeLine() {
             title="Education Milestones"
             description="Academic achievements and learning"
             iconBg="bg-[#6693B2]"
-            darkIconBg="dark:bg-[#A99B8E]"
+            darkIconBg="dark:bg-[#ffff00]"
             iconText="text-white"
-            darkIconText="dark:text-[#312E29]"
+            darkIconText="dark:text-black"
           />
 
           <SummaryCard
@@ -431,9 +431,9 @@ export default function TimeLine() {
             title="Work Experience"
             description="Professional growth and projects"
             iconBg="bg-[#E57986]"
-            darkIconBg="dark:bg-[#6C3B3F]"
+            darkIconBg="dark:bg-[#ffff00]"
             iconText="text-white"
-            darkIconText="dark:text-[#EEEAE1]"
+            darkIconText="dark:text-black"
           />
 
           <SummaryCard
@@ -441,9 +441,9 @@ export default function TimeLine() {
             title="Continuous Growth"
             description="Always learning and evolving"
             iconBg="bg-[#A45F7B]"
-            darkIconBg="dark:bg-[#A99B8E]"
+            darkIconBg="dark:bg-[#ffff00]"
             iconText="text-white"
-            darkIconText="dark:text-[#312E29]"
+            darkIconText="dark:text-black"
           />
         </motion.div>
       </div>

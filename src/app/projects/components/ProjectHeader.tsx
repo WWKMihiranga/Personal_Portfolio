@@ -54,8 +54,8 @@ export default function ProjectHeader() {
           viewport={{ once: true }}
           className="text-lg text-gray-600 dark:text-[#ffffff] max-w-2xl mx-auto dark:animate-pulse"
         >
-          A collection of my work showcasing modern web development with
-          cutting-edge technologies
+          A collection of my work showcasing AI-driven solutions, modern mobile
+          and web development with cutting-edge technologies
         </motion.p>
       </motion.div>
     </div>

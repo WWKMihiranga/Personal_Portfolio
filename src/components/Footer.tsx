@@ -95,7 +95,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#6693B2] dark:bg-[#00ff00] rounded-xl sm:rounded-2xl dark:rounded-none flex items-center justify-center animate-none dark:animate-ping">
                 <span className="text-white dark:text-[#ff0000] font-bold text-lg sm:text-xl">
-                  M
+                  K
                 </span>
               </div>
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
@@ -107,9 +107,9 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-600 dark:text-[#CFC6BD] text-base sm:text-lg leading-relaxed max-w-md">
-              Creating innovative digital experiences with modern web
-              technologies. Passionate about building solutions that make a
-              difference.
+              Crafting intelligent digital experiences with AI, mobile, and
+              modern web technologies. Passionate about building solutions that
+              truly matter.
             </p>
 
             {/* Social links with enhanced design */}
@@ -132,7 +132,7 @@ export default function Footer() {
 
             {/* Skills highlight */}
             <div className="flex flex-wrap gap-2 pt-2 sm:pt-4">
-              {["React", "Next.js", "Three.js", "Tailwind"].map(
+              {["Python", "Next.js", "Java", "Flutter", "MySQL"].map(
                 (skill, index) => (
                   <motion.span
                     key={skill}
@@ -201,7 +201,7 @@ export default function Footer() {
 
               <motion.a
                 whileHover={{ x: 4 }}
-                href="tel:+11234567890"
+                href="tel:+94772939510"
                 className="flex items-center text-sm sm:text-base text-gray-600 dark:text-[#ffffff] hover:text-[#6693B2] dark:hover:text-[#00ffff] transition-all duration-300 group"
               >
                 <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white dark:bg-[#ff0000] rounded-lg sm:rounded-xl dark:rounded-none flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-[#6693B2] dark:group-hover:bg-[#00ff00] transition-colors duration-300">
@@ -217,31 +217,11 @@ export default function Footer() {
                 <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white dark:bg-[#ff0000] rounded-lg sm:rounded-xl dark:rounded-none flex items-center justify-center mr-2 sm:mr-3 group-hover:bg-[#6693B2] dark:group-hover:bg-[#00ff00] transition-colors duration-300">
                   <FaMapMarkerAlt className="w-3 h-3 sm:w-4 sm:h-4 group-hover:text-white dark:group-hover:text-black" />
                 </div>
-                <span>Banwelgodella, Aluthwala</span>
+                <span>Galle, Sri Lanka</span>
               </motion.div>
             </div>
 
             {/* CTA Button */}
-            {/* <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="pt-4"
-              >
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-[#6693B2] dark:bg-[#00ff00] text-white dark:text-[#000000] rounded-2xl dark:rounded-none font-medium hover:bg-[#A45F7B] dark:hover:bg-[#ff0000] transition-all duration-300 shadow-lg hover:shadow-xl dark:animate-shake"
-                >
-                  Start a Project
-                  <motion.div
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                    className="ml-2"
-                  >
-                    →
-                  </motion.div>
-                </Link>
-              </motion.div> */}
-
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -286,7 +266,7 @@ export default function Footer() {
               <span className="mx-1 text-[#E57986] dark:text-[#ff00ff] dark:animate-bounce">
                 ❤️
               </span>
-              using Next.js & Tailwind CSS
+              using Next.js, Three.js & Tailwind CSS
             </span>
           </div>
 

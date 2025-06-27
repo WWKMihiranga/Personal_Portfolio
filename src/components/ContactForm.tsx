@@ -18,7 +18,7 @@ export default function ContactSection() {
     {
       icon: FiMail,
       label: "Email",
-      value: "your.email@example.com",
+      value: "kavirangot@gmail.com",
       href: "mailto:your.email@example.com",
       description: "Best way to reach me",
       color: "text-[#6693B2] dark:text-[#ff0000]",
@@ -27,8 +27,8 @@ export default function ContactSection() {
     {
       icon: FiPhone,
       label: "Phone",
-      value: "+1 (123) 456-7890",
-      href: "tel:+11234567890",
+      value: "+94 (77) 293 9510",
+      href: "tel:+94772939510",
       description: "Available during business hours",
       color: "text-[#E57986] dark:text-[#ffff00]",
       bg: "bg-[#E57986] dark:bg-[#ff00ff]",
@@ -36,7 +36,7 @@ export default function ContactSection() {
     {
       icon: FiMapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Galle, Sri Lanka",
       href: null,
       description: "Open to remote work",
       color: "text-[#A45F7B] dark:text-[#00ffff]",
@@ -281,31 +281,6 @@ export default function ContactSection() {
                 </p>
 
                 {/* Contact Page Button */}
-                {/* <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                    y: -2,
-                    transition: { duration: 0.2 },
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => (window.location.href = "/contact")}
-                  className="group w-full bg-[#6693B2] dark:bg-[#ff00ff] hover:bg-[#A45F7B] dark:hover:bg-[#00ffff] text-white dark:text-black font-semibold py-4 px-6 rounded-2xl dark:rounded-none transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <div className="flex items-center justify-center space-x-3">
-                    <span className="text-lg">Send Message</span>
-                    <motion.div
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
-                      <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 dark:animate-pulse" />
-                    </motion.div>
-                  </div>
-                </motion.button> */}
-
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -334,7 +309,7 @@ export default function ContactSection() {
                   </p>
                   <a
                     href="mailto:kavirangot@example.com"
-                    className="inline-flex items-center text-sm sm:text-base text-[#6693B2] dark:text-[#ff0000] hover:text-[#A45F7B] dark:hover:text-[#00ffff] font-medium transition-colors duration-300 break-all"
+                    className="inline-flex items-center text-sm sm:text-base text-[#6693B2] dark:text-[#00ffff] hover:text-[#A45F7B] dark:hover:text-[#ff0000] font-medium transition-colors duration-300 break-all"
                   >
                     <FiExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                     kavirangot@example.com
@@ -344,57 +319,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* Bottom Stats
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
-            viewport={{ once: true }}
-            className="p-6 bg-[#F1E8DF] dark:bg-[#312E29] rounded-2xl border border-[#A9C8DA] dark:border-[#6C3B3F] text-center"
-          >
-            <div className="w-12 h-12 bg-[#6693B2] dark:bg-[#A99B8E] rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-white dark:text-[#312E29] font-bold text-lg">24h</span>
-            </div>
-            <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">Quick Response</h4>
-            <p className="text-sm text-gray-600 dark:text-[#CFC6BD]">Fast turnaround on all inquiries</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            viewport={{ once: true }}
-            className="p-6 bg-[#F1E8DF] dark:bg-[#312E29] rounded-2xl border border-[#A9C8DA] dark:border-[#6C3B3F] text-center"
-          >
-            <div className="w-12 h-12 bg-[#E57986] dark:bg-[#6C3B3F] rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-white dark:text-[#EEEAE1] font-bold text-lg">100%</span>
-            </div>
-            <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">Satisfaction</h4>
-            <p className="text-sm text-gray-600 dark:text-[#CFC6BD]">Committed to delivering excellence</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.1, duration: 0.6 }}
-            viewport={{ once: true }}
-            className="p-6 bg-[#F1E8DF] dark:bg-[#312E29] rounded-2xl border border-[#A9C8DA] dark:border-[#6C3B3F] text-center"
-          >
-            <div className="w-12 h-12 bg-[#A45F7B] dark:bg-[#A99B8E] rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-white dark:text-[#312E29] font-bold text-lg">∞</span>
-            </div>
-            <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">Collaboration</h4>
-            <p className="text-sm text-gray-600 dark:text-[#CFC6BD]">Long-term partnerships built</p>
-          </motion.div>
-        </motion.div> */}
       </motion.div>
     </div>
   );

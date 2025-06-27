@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiClock, FiMail, FiMapPin, FiExternalLink } from "react-icons/fi";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { ContactCard } from "./ContactCard";
 
 interface ContactItem {
@@ -24,21 +24,21 @@ export const ContactInformation: React.FC = () => {
     {
       icon: FiMail,
       label: "Email",
-      value: "abc@example.com",
-      href: "mailto:your.email@example.com",
+      value: "kavirangot@gmail.com",
+      href: "mailto:kavirangot@gmail.com",
       description: "Drop me a line anytime",
     },
     {
       icon: FiMapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Galle, Sri Lanka",
       href: null,
       description: "Available for remote work",
     },
     {
       icon: FiClock,
       label: "Availability",
-      value: "Mon-Fri, 9am-5pm PST",
+      value: "Mon-Fri, 9am-5pm",
       href: null,
       description: "Usually respond within 24hrs",
     },
@@ -48,19 +48,19 @@ export const ContactInformation: React.FC = () => {
     {
       icon: FaLinkedin,
       label: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/in/kavindu-mihiranga-35a28a276",
       color: "hover:text-[#0077B5]",
     },
     {
       icon: FaGithub,
       label: "GitHub",
-      href: "#",
+      href: "https://github.com/WWKMihiranga",
       color: "hover:text-[#333]",
     },
     {
-      icon: FaTwitter,
-      label: "Twitter",
-      href: "#",
+      icon: FaInstagram,
+      label: "Instagram",
+      href: "https://instagram.com/w.w.kavindu_mihiranga",
       color: "hover:text-[#1DA1F2]",
     },
   ];

@@ -4,42 +4,9 @@ import { FiDownload, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import Link from "next/link";
 import ThreeBackground from "./ThreeBackground";
 import Lottie from "lottie-react";
-import welcomeAnimation from "C:/Users/kavir/OneDrive/Desktop/Practices/NextJS/Portfolio/my-portfolio/public/welcome.json";
-import welcomeDarkAnimation from "C:/Users/kavir/OneDrive/Desktop/Practices/NextJS/Portfolio/my-portfolio/public/welcome(dark).json";
 
 const PortfolioHomepage = () => {
   const [isSystemDark, setIsSystemDark] = useState(false);
-
-  // useEffect(() => {
-  //   const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-  //   const updateDarkMode = (e: MediaQueryListEvent | MediaQueryList) => {
-  //     const newValue = e.matches;
-  //     setIsSystemDark((prev) => {
-  //       if (prev !== newValue) {
-  //         return newValue;
-  //       }
-  //       return prev;
-  //     });
-
-  //     // Apply to <html>
-  //     if (e.matches) {
-  //       document.documentElement.classList.add("dark");
-  //     } else {
-  //       document.documentElement.classList.remove("dark");
-  //     }
-  //   };
-
-  //   // Initial check
-  //   updateDarkMode(darkModeQuery);
-
-  //   // Listener for changes
-  //   darkModeQuery.addEventListener("change", updateDarkMode);
-
-  //   return () => {
-  //     darkModeQuery.removeEventListener("change", updateDarkMode);
-  //   };
-  // }, []);
 
   const socialLinks = [
     {
@@ -104,6 +71,20 @@ const PortfolioHomepage = () => {
     link.click();
   };
 
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    const loadAnimation = async () => {
+      const res = await fetch("/welcome.json");
+      const data = await res.json();
+      setAnimationData(data);
+    };
+
+    loadAnimation();
+  }, []);
+
+  if (!animationData) return <div className="h-[200px]" />;
+
   return (
     <div className={`min-h-screen`}>
       <ThreeBackground />
@@ -125,14 +106,12 @@ const PortfolioHomepage = () => {
               animate="visible"
               className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
             >
-              {/* Animation Column - Now at the top */}
+              {/* Animation Column */}
               <div className="order-1 md:order-1 flex justify-center mt-8 md:mt-0">
                 <div className="w-full max-w-[280px] sm:max-w-md">
                   <Suspense fallback={<div className="h-[200px]" />}>
                     <Lottie
-                      animationData={
-                        isSystemDark ? welcomeDarkAnimation : welcomeAnimation
-                      }
+                      animationData={animationData}
                       loop
                       autoplay
                       className="w-full h-auto"
@@ -156,9 +135,9 @@ const PortfolioHomepage = () => {
                   </p>
 
                   <p className="text-lg md:text-xl text-[#6693B2] dark:text-[#ffffff] max-w-3xl mx-auto">
-                    Passionate about breaking design norms with unbearable
-                    contrasts. Specializing in UI crime with a flair for
-                    disruption and discomfort.
+                    Passionate about pushing tech boundaries with intelligent
+                    interfaces. Specializing in AI-infused design, smart
+                    frontends, and seamless mobile experiences.
                   </p>
                 </motion.div>
 

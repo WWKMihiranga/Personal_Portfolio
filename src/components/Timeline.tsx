@@ -1,46 +1,63 @@
-'use client'
-import { motion } from 'framer-motion'
-import { EXPERIENCE_DATA } from '@/lib/experience'
-import { FiExternalLink, FiMapPin, FiCalendar, FiAward, FiCode, FiTrendingUp, FiUsers, FiTarget } from 'react-icons/fi'
-import { useInView } from 'react-intersection-observer'
-import DiaryPhoto from './DiaryPhotoProps'
-import { useRef, useState, useLayoutEffect } from 'react'
+"use client";
+import { motion } from "framer-motion";
+import { EXPERIENCE_DATA } from "@/lib/experience";
+import {
+  FiExternalLink,
+  FiMapPin,
+  FiCalendar,
+  FiAward,
+  FiCode,
+  FiTrendingUp,
+  FiUsers,
+  FiTarget,
+} from "react-icons/fi";
+import { useInView } from "react-intersection-observer";
+import DiaryPhoto from "./DiaryPhotoProps";
+import { useRef, useState, useLayoutEffect } from "react";
 
 export default function Timeline() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
-  const [selectedFilter, setSelectedFilter] = useState('All')
-const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [selectedFilter, setSelectedFilter] = useState("All");
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  const isEducation = (role: string) => role.includes('BSc') || role.toLowerCase().includes('student') || role.toLowerCase().includes('education')
+  const isEducation = (role: string) =>
+    role.includes("BSc") ||
+    role.toLowerCase().includes("student") ||
+    role.toLowerCase().includes("education");
 
-  const photoRef = useRef<HTMLDivElement>(null)
-  const [shouldShowPhoto, setShouldShowPhoto] = useState(true)
+  const photoRef = useRef<HTMLDivElement>(null);
+  const [shouldShowPhoto, setShouldShowPhoto] = useState(true);
 
   useLayoutEffect(() => {
-    const photo = photoRef.current
+    const photo = photoRef.current;
     if (photo) {
-      const rect = photo.getBoundingClientRect()
-      const isOverflowing = rect.right > window.innerWidth || rect.left < 0
-      setShouldShowPhoto(!isOverflowing)
+      const rect = photo.getBoundingClientRect();
+      const isOverflowing = rect.right > window.innerWidth || rect.left < 0;
+      setShouldShowPhoto(!isOverflowing);
     }
-  }, [])
+  }, []);
 
-  const experienceCategories = ['All', 'Work', 'Education', 'Projects']
-  const filteredExperience = selectedFilter === 'All' 
-    ? EXPERIENCE_DATA 
-    : EXPERIENCE_DATA.filter(item => {
-        if (selectedFilter === 'Education') return isEducation(item.role)
-        if (selectedFilter === 'Work') return !isEducation(item.role)
-        return true
-      })
+  const experienceCategories = ["All", "Work", "Education", "Projects"];
+  const filteredExperience =
+    selectedFilter === "All"
+      ? EXPERIENCE_DATA
+      : EXPERIENCE_DATA.filter((item) => {
+          if (selectedFilter === "Education") return isEducation(item.role);
+          if (selectedFilter === "Work") return !isEducation(item.role);
+          return true;
+        });
 
-  const totalExperience = EXPERIENCE_DATA.length
-  const workExperience = EXPERIENCE_DATA.filter(item => !isEducation(item.role)).length
-  const educationItems = EXPERIENCE_DATA.filter(item => isEducation(item.role)).length
+  const totalExperience = EXPERIENCE_DATA.length;
+  const workExperience = EXPERIENCE_DATA.filter(
+    (item) => !isEducation(item.role)
+  ).length;
+  const educationItems = EXPERIENCE_DATA.filter((item) =>
+    isEducation(item.role)
+  ).length;
 
   return (
     <div className="relative min-h-screen bg-white dark:bg-[#312E29]">
@@ -54,7 +71,7 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
-          {/* Enhanced Header */}
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -71,18 +88,21 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
               className="inline-flex items-center px-4 py-2 rounded-full bg-[#F1E8DF] dark:bg-[#312E29] border border-[#A9C8DA] dark:border-[#6C3B3F] mb-6"
             >
               <div className="w-2 h-2 bg-[#6693B2] dark:bg-[#A99B8E] rounded-full mr-2 animate-pulse"></div>
-              <span className="text-sm font-medium text-[#A45F7B] dark:text-[#CFC6BD]">Professional Journey</span>
+              <span className="text-sm font-medium text-[#A45F7B] dark:text-[#CFC6BD]">
+                Professional Journey
+              </span>
             </motion.div>
 
             {/* Main Title */}
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-[#EEEAE1] mb-4"
             >
-              Experience <span className="text-[#6693B2] dark:text-[#A99B8E] relative">
+              Experience{" "}
+              <span className="text-[#6693B2] dark:text-[#A99B8E] relative">
                 Timeline
                 <motion.div
                   initial={{ scaleX: 0 }}
@@ -101,7 +121,8 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
               viewport={{ once: true }}
               className="text-lg text-gray-600 dark:text-[#CFC6BD] max-w-2xl mx-auto"
             >
-              My career path and the valuable experiences I've gained along the way
+              My career path and the valuable experiences I've gained along the
+              way
             </motion.p>
           </motion.div>
 
@@ -125,8 +146,8 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
                 onClick={() => setSelectedFilter(category)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 border-2 ${
                   selectedFilter === category
-                    ? 'bg-[#6693B2] dark:bg-[#A99B8E] text-white dark:text-[#312E29] border-[#6693B2] dark:border-[#A99B8E] shadow-lg'
-                    : 'bg-[#F1E8DF] dark:bg-[#312E29] text-[#A45F7B] dark:text-[#CFC6BD] border-[#A9C8DA] dark:border-[#6C3B3F] hover:bg-[#A9C8DA] dark:hover:bg-[#6C3B3F]'
+                    ? "bg-[#6693B2] dark:bg-[#A99B8E] text-white dark:text-[#312E29] border-[#6693B2] dark:border-[#A99B8E] shadow-lg"
+                    : "bg-[#F1E8DF] dark:bg-[#312E29] text-[#A45F7B] dark:text-[#CFC6BD] border-[#A9C8DA] dark:border-[#6C3B3F] hover:bg-[#A9C8DA] dark:hover:bg-[#6C3B3F]"
                 }`}
               >
                 {category}
@@ -146,29 +167,41 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
               <div className="w-12 h-12 bg-[#6693B2] dark:bg-[#A99B8E] rounded-full flex items-center justify-center mx-auto mb-4">
                 <FiTrendingUp className="w-6 h-6 text-white dark:text-[#312E29]" />
               </div>
-              <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">Total Experience</h4>
-              <p className="text-2xl font-bold text-[#6693B2] dark:text-[#A99B8E]">{totalExperience}</p>
+              <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">
+                Total Experience
+              </h4>
+              <p className="text-2xl font-bold text-[#6693B2] dark:text-[#A99B8E]">
+                {totalExperience}
+              </p>
             </div>
 
             <div className="p-6 bg-[#F1E8DF] dark:bg-[#312E29] rounded-2xl border border-[#A9C8DA] dark:border-[#6C3B3F] text-center">
               <div className="w-12 h-12 bg-[#E57986] dark:bg-[#6C3B3F] rounded-full flex items-center justify-center mx-auto mb-4">
                 <FiUsers className="w-6 h-6 text-white dark:text-[#EEEAE1]" />
               </div>
-              <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">Work Experience</h4>
-              <p className="text-2xl font-bold text-[#E57986] dark:text-[#6C3B3F]">{workExperience}</p>
+              <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">
+                Work Experience
+              </h4>
+              <p className="text-2xl font-bold text-[#E57986] dark:text-[#6C3B3F]">
+                {workExperience}
+              </p>
             </div>
 
             <div className="p-6 bg-[#F1E8DF] dark:bg-[#312E29] rounded-2xl border border-[#A9C8DA] dark:border-[#6C3B3F] text-center">
               <div className="w-12 h-12 bg-[#A45F7B] dark:bg-[#A99B8E] rounded-full flex items-center justify-center mx-auto mb-4">
                 <FiTarget className="w-6 h-6 text-white dark:text-[#312E29]" />
               </div>
-              <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">Education</h4>
-              <p className="text-2xl font-bold text-[#A45F7B] dark:text-[#A99B8E]">{educationItems}</p>
+              <h4 className="font-semibold text-gray-800 dark:text-[#EEEAE1] mb-2">
+                Education
+              </h4>
+              <p className="text-2xl font-bold text-[#A45F7B] dark:text-[#A99B8E]">
+                {educationItems}
+              </p>
             </div>
           </motion.div>
 
           <div className="relative">
-            {/* Enhanced Timeline line with animated progress */}
+            {/* Timeline line with animated progress */}
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 overflow-hidden rounded-full bg-[#A9C8DA] dark:bg-[#6C3B3F] opacity-30">
               <motion.div
                 initial={{ height: 0 }}
@@ -183,16 +216,16 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
                 key={index}
                 initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, y: 0, x: 0 }}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.2,
-                  ease: "easeOut"
+                  ease: "easeOut",
                 }}
                 viewport={{ once: true }}
                 className={`relative mb-16 last:mb-0 ${
-                  index % 2 === 0 
-                    ? 'md:pr-12 md:text-right md:flex md:justify-end' 
-                    : 'md:pl-12 md:text-left'
+                  index % 2 === 0
+                    ? "md:pr-12 md:text-right md:flex md:justify-end"
+                    : "md:pl-12 md:text-left"
                 }`}
               >
                 {/* Photo Component */}
@@ -206,24 +239,34 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
                   </div>
                 )}
 
-                {/* Enhanced Timeline dot with pulse animation */}
-                <motion.div 
+                {/* Timeline dot with pulse animation */}
+                <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
                   className="absolute left-6 md:left-1/2 w-6 h-6 rounded-full border-4 border-white dark:border-[#312E29] transform -translate-x-1/2 z-20 shadow-lg"
-                  style={{ 
-                    backgroundColor: isEducation(item.role) ? '#6693B2' : '#E57986'
+                  style={{
+                    backgroundColor: isEducation(item.role)
+                      ? "#6693B2"
+                      : "#E57986",
                   }}
                 >
                   {/* Pulse animation */}
                   <motion.div
                     animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
                     className="absolute inset-0 rounded-full opacity-30"
-                    style={{ backgroundColor: isEducation(item.role) ? '#6693B2' : '#E57986' }}
+                    style={{
+                      backgroundColor: isEducation(item.role)
+                        ? "#6693B2"
+                        : "#E57986",
+                    }}
                   />
-                  
+
                   {/* Inner dot */}
                   <motion.div
                     initial={{ scale: 0 }}
@@ -235,26 +278,29 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
                 {/* Experience card with enhanced styling */}
                 <motion.div
-                  whileHover={{ 
-                    scale: 1.02, 
+                  whileHover={{
+                    scale: 1.02,
                     y: -8,
-                    transition: { duration: 0.3, ease: "easeOut" }
+                    transition: { duration: 0.3, ease: "easeOut" },
                   }}
                   onHoverStart={() => setHoveredCard(index)}
                   onHoverEnd={() => setHoveredCard(null)}
                   className={`mt-12 md:mt-0 ml-16 md:ml-0 ${
-                    index % 2 === 0 ? 'md:max-w-lg' : 'md:max-w-lg'
+                    index % 2 === 0 ? "md:max-w-lg" : "md:max-w-lg"
                   }`}
                 >
                   <div className="relative bg-white dark:bg-[#312E29] p-8 rounded-3xl shadow-xl border-2 border-[#A9C8DA] dark:border-[#6C3B3F] hover:border-[#6693B2] dark:hover:border-[#A99B8E] transition-all duration-300 hover:shadow-2xl overflow-hidden group">
-                    
                     {/* Background gradient effect */}
                     <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#F1E8DF] dark:to-[#6C3B3F] opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                    
+
                     {/* Decorative corner accent */}
-                    <div 
+                    <div
                       className="absolute top-0 right-0 w-20 h-20 transform translate-x-10 -translate-y-10 rotate-45 opacity-20 transition-opacity duration-300 group-hover:opacity-40"
-                      style={{ backgroundColor: isEducation(item.role) ? '#6693B2' : '#E57986' }}
+                      style={{
+                        backgroundColor: isEducation(item.role)
+                          ? "#6693B2"
+                          : "#E57986",
+                      }}
                     />
 
                     {/* Date badge */}
@@ -266,7 +312,9 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
                     >
                       <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#F1E8DF] dark:bg-[#6C3B3F] border border-[#A9C8DA] dark:border-[#A99B8E] text-sm font-semibold">
                         <FiCalendar className="w-3 h-3 text-[#6693B2] dark:text-[#A99B8E]" />
-                        <span className="text-[#A45F7B] dark:text-[#CFC6BD]">{item.period}</span>
+                        <span className="text-[#A45F7B] dark:text-[#CFC6BD]">
+                          {item.period}
+                        </span>
                       </div>
                     </motion.div>
 
@@ -274,11 +322,13 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
                     <div className="relative z-10">
                       {/* Role and Company Header */}
                       <div className="flex items-start gap-3 mb-6">
-                        <div className={`p-2 rounded-xl ${
-                          isEducation(item.role) 
-                            ? 'bg-[#6693B2] dark:bg-[#A99B8E]' 
-                            : 'bg-[#E57986] dark:bg-[#6C3B3F]'
-                        }`}>
+                        <div
+                          className={`p-2 rounded-xl ${
+                            isEducation(item.role)
+                              ? "bg-[#6693B2] dark:bg-[#A99B8E]"
+                              : "bg-[#E57986] dark:bg-[#6C3B3F]"
+                          }`}
+                        >
                           {isEducation(item.role) ? (
                             <FiAward className="w-5 h-5 text-white dark:text-[#312E29]" />
                           ) : (
@@ -381,7 +431,11 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
               <span className="text-sm font-medium">Journey continues...</span>
               <motion.div
                 animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <FiTrendingUp className="w-4 h-4" />
               </motion.div>
@@ -390,5 +444,5 @@ const [hoveredCard, setHoveredCard] = useState<number | null>(null);
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -78,7 +78,7 @@ export const ContactForm: React.FC = () => {
             <ContactInformation />
           </div>
 
-          {/* Enhanced Contact Form */}
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export const ContactForm: React.FC = () => {
                   <FormField
                     id="name"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Enter your name here"
                     label="Your Name"
                     value={form.name}
                     onChange={(value) => setForm({ ...form, name: value })}
@@ -119,7 +119,7 @@ export const ContactForm: React.FC = () => {
                   <FormField
                     id="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="Enter your email here"
                     label="Email Address"
                     value={form.email}
                     onChange={(value) => setForm({ ...form, email: value })}
@@ -151,7 +151,7 @@ export const ContactForm: React.FC = () => {
                 {status === "success" && (
                   <StatusMessage
                     type="success"
-                    title="Message sent successfully!"
+                    title="Message sent successfully."
                     message="I'll get back to you within 24 hours."
                   />
                 )}
@@ -166,13 +166,11 @@ export const ContactForm: React.FC = () => {
               </form>
 
               {/* Form completion indicator */}
-              {/* <FormCompletionIndicator form={form} /> */}
+              <FormCompletionIndicator form={form} />
             </ContactCard>
             <AdditionalCTA />
           </motion.div>
         </div>
-
-        {/* Additional CTA Section */}
       </div>
     </div>
   );
@@ -230,7 +228,7 @@ const ContactHeader: React.FC = () => (
       className="text-lg text-gray-600 dark:text-[#ffffff] max-w-2xl mx-auto dark:animate-pulse"
     >
       Have a project in mind or want to discuss opportunities? Feel free to
-      reach out - I'd love to hear from you!
+      reach out - I'd love to hear from you.
     </motion.p>
   </motion.div>
 );

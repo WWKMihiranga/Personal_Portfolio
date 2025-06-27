@@ -32,34 +32,54 @@ type TechIcon = {
 // Constants
 const CERTIFICATIONS: Certification[] = [
   {
-    title: "React Developer Certificate",
-    issuer: "Meta",
+    title: "Java (Basic) Certificate",
+    issuer: "HackerRank",
     description:
-      "Comprehensive certification covering React fundamentals, hooks, state management, and modern development practices.",
-    date: "2024",
-    credentialId: "ABC123",
-    techStack: ["React", "TypeScript"],
-    link: "https://example.com/cert1",
+      "Validated core Java programming knowledge including data types, loops, conditionals, and object-oriented fundamentals.",
+    date: "2025",
+    credentialId: "AOE2E70FDCF9",
+    techStack: ["Java"],
+    link: "https://www.hackerrank.com/certificates/a0e2e70fdcf9",
   },
   {
-    title: "Node.js Application Developer",
-    issuer: "OpenJS Foundation",
+    title: "SQL (Basic) Certificate",
+    issuer: "HackerRank",
     description:
-      "Advanced server-side JavaScript development with Node.js, Express, and database integration.",
-    date: "2023",
-    credentialId: "DEF456",
-    techStack: ["Node.js", "TypeScript"],
-    link: "https://example.com/cert2",
+      "Covered basic SQL queries, filtering, sorting, joins, and data aggregation techniques.",
+    date: "2025",
+    credentialId: "A697D2015454",
+    techStack: ["SQL"],
+    link: "https://www.hackerrank.com/certificates/a697d2015454",
   },
   {
-    title: "Python Programming",
-    issuer: "Python Institute",
+    title: "Python (Basic) Certificate",
+    issuer: "HackerRank",
     description:
-      "Core Python programming concepts, data structures, and object-oriented programming principles.",
-    date: "2023",
-    credentialId: "GHI789",
+      "Demonstrated fundamental Python programming skills including syntax, functions, data structures, and control flow.",
+    date: "2025",
+    credentialId: "BDB17B40OF42",
     techStack: ["Python"],
-    link: "https://example.com/cert3",
+    link: "https://www.hackerrank.com/certificates/bdb17b400f42",
+  },
+  {
+    title: "JavaScript (Basic) Certificate",
+    issuer: "HackerRank",
+    description:
+      "Tested core JavaScript skills such as variables, functions, loops, arrays, and DOM basics.",
+    date: "2025",
+    credentialId: "2FDB5526143B",
+    techStack: ["JavaScript"],
+    link: "https://www.hackerrank.com/certificates/2fdb5526143b",
+  },
+  {
+    title: "SQL (Intermediate) Certificate",
+    issuer: "HackerRank",
+    description:
+      "Assessed intermediate SQL skills, including subqueries, advanced joins, grouping sets, and window functions.",
+    date: "2025",
+    credentialId: "D2CA1EEEFEDB",
+    techStack: ["SQL"],
+    link: "https://www.hackerrank.com/certificates/d2ca1eeefedb",
   },
 ];
 
@@ -258,7 +278,7 @@ const StatsCard = ({
   description: string;
   color: string;
 }) => (
-  <div className="text-center p-6 bg-[#F1E8DF] dark:bg-black rounded-2xl dark:rounded-none border border-[#A9C8DA] dark:border-[#ff0000] dark:animate-pulse transition-all duration-300">
+  <div className="p-6 bg-[#F1E8DF] dark:bg-black rounded-2xl dark:rounded-none border border-[#A9C8DA] dark:border-[#ff0000] text-center hover:shadow-lg dark:hover:shadow-[#ff0000] transition-all duration-300 dark:animate-pulse">
     <div
       className={`w-12 h-12 ${color} rounded-full dark:rounded-none dark:animate-bounce flex items-center justify-center mx-auto mb-4`}
     >
@@ -266,12 +286,10 @@ const StatsCard = ({
         {value}
       </span>
     </div>
-    <h4 className="font-semibold text-gray-800 dark:text-[#ffff00] mb-2 dark:animate-pulse">
+    <h4 className="font-semibold text-gray-800 dark:text-[#ffffff] mb-2">
       {title}
     </h4>
-    <p className="text-sm text-gray-600 dark:text-[#ffffff] dark:italic">
-      {description}
-    </p>
+    <p className="text-sm text-gray-600 dark:text-[#ff00ff]">{description}</p>
   </div>
 );
 
@@ -292,7 +310,7 @@ const SummaryStats = () => {
         value={CERTIFICATIONS.length}
         title="Active Certifications"
         description="Verified professional credentials"
-        color="bg-[#6693B2] dark:bg-[#ff0000]"
+        color="bg-[#6693B2] dark:bg-[#00ffff]"
       />
       <StatsCard
         value={uniqueTechCount}
@@ -304,7 +322,7 @@ const SummaryStats = () => {
         value={new Date().getFullYear()}
         title="Latest Year"
         description="Continuously learning"
-        color="bg-[#A45F7B] dark:bg-[#ff00ff]"
+        color="bg-[#A45F7B] dark:bg-[#00ffff]"
       />
     </motion.div>
   );

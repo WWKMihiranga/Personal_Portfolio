@@ -27,7 +27,7 @@ export default function GitHub() {
             whileTap="tap"
             className="mb-6 sm:mb-8"
           >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#6693B2] dark:bg-[#00ffff] rounded-full dark:rounded-none flex items-center justify-center mx-auto mb-4 sm:mb-6 dark:cursor-crosshair dark:animate-spin dark:hover:animate-pulse">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#6693B2] dark:bg-[#00ffff] hover:dark:bg-white rounded-full dark:rounded-none flex items-center justify-center mx-auto mb-4 sm:mb-6 dark:cursor-crosshair dark:animate-spin dark:hover:animate-pulse">
               <FiGithub className="w-8 h-8 sm:w-10 sm:h-10 text-white dark:text-black" />
             </div>
 

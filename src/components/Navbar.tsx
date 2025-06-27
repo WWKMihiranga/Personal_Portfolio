@@ -77,7 +77,7 @@ export default function Navbar() {
               </Link>
             </motion.div>
 
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-2">

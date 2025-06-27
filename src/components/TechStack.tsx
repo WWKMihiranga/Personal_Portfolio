@@ -1,14 +1,12 @@
 "use client";
 
-import { FaNodeJs, FaReact } from "react-icons/fa";
+import { FaNodeJs, FaReact, FaPython, FaJava, FaDocker } from "react-icons/fa";
 import {
   SiFlutter,
-  SiGraphql,
-  SiJest,
   SiNextdotjs,
   SiTailwindcss,
-  SiThreedotjs,
   SiTypescript,
+  SiMysql,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
@@ -45,6 +43,46 @@ export interface TechItem {
 
 export const techStackData: TechItem[] = [
   {
+    name: "Python",
+    icon: <FaPython className="w-8 h-8" />,
+    category: "Language",
+    description: "ML and AI development",
+    color: "text-[#6693B2] dark:text-[#ffff00]",
+    bgColor: "bg-[#A9C8DA] dark:bg-[#ff0000]",
+  },
+  {
+    name: "Java",
+    icon: <FaJava className="w-8 h-8" />,
+    category: "Language",
+    description: "OOP language",
+    color: "text-[#E57986] dark:text-[#ffff00]",
+    bgColor: "bg-[#FFBB94] dark:bg-[#ff0000]",
+  },
+  {
+    name: "Flutter",
+    icon: <SiFlutter className="w-8 h-8" />,
+    category: "Mobile",
+    description: "UI toolkit for building apps",
+    color: "text-[#6693B2] dark:text-[#ffff00]",
+    bgColor: "bg-[#A9C8DA] dark:bg-[#ff0000]",
+  },
+  {
+    name: "Docker",
+    icon: <FaDocker className="w-8 h-8" />,
+    category: "DevOps",
+    description: "Containerization platform",
+    color: "text-gray-800 dark:text-[#ffff00]",
+    bgColor: "bg-[#F1E8DF] dark:bg-[#ff0000]",
+  },
+  {
+    name: "MySQL",
+    icon: <SiMysql className="w-8 h-8" />,
+    category: "Database",
+    description: "Relational database system",
+    color: "text-[#A45F7B] dark:text-[#ffff00]",
+    bgColor: "bg-[#E57986] dark:bg-[#ff0000]",
+  },
+  {
     name: "Next.js",
     icon: <SiNextdotjs className="w-8 h-8" />,
     category: "Framework",
@@ -52,21 +90,21 @@ export const techStackData: TechItem[] = [
     color: "text-gray-800 dark:text-[#ffff00]",
     bgColor: "bg-[#F1E8DF] dark:bg-[#ff0000]",
   },
-  {
-    name: "React",
-    icon: <FaReact className="w-8 h-8" />,
-    category: "Library",
-    description: "UI component library",
-    color: "text-[#6693B2] dark:text-[#ffff00]",
-    bgColor: "bg-[#A9C8DA] dark:bg-[#ff0000]",
-  },
+  // {
+  //   name: "React",
+  //   icon: <FaReact className="w-8 h-8" />,
+  //   category: "Library",
+  //   description: "UI component library",
+  //   color: "text-[#6693B2] dark:text-[#ffff00]",
+  //   bgColor: "bg-[#A9C8DA] dark:bg-[#ff0000]",
+  // },
   {
     name: "TypeScript",
     icon: <SiTypescript className="w-8 h-8" />,
     category: "Language",
     description: "Typed JavaScript",
-    color: "text-[#6693B2] dark:text-[#ffff00]",
-    bgColor: "bg-[#A9C8DA] dark:bg-[#ff0000]",
+    color: "text-[#A45F7B] dark:text-[#ffff00]",
+    bgColor: "bg-[#E57986] dark:bg-[#ff0000]",
   },
   {
     name: "Node.js",
@@ -76,38 +114,14 @@ export const techStackData: TechItem[] = [
     color: "text-[#E57986] dark:text-[#ffff00]",
     bgColor: "bg-[#FFBB94] dark:bg-[#ff0000]",
   },
-  {
-    name: "Tailwind",
-    icon: <SiTailwindcss className="w-8 h-8" />,
-    category: "Styling",
-    description: "Utility-first CSS",
-    color: "text-[#6693B2] dark:text-[#ffff00]",
-    bgColor: "bg-[#A9C8DA] dark:bg-[#ff0000]",
-  },
-  {
-    name: "Three.js",
-    icon: <SiThreedotjs className="w-8 h-8" />,
-    category: "3D Graphics",
-    description: "WebGL 3D library",
-    color: "text-gray-700 dark:text-[#ffff00]",
-    bgColor: "bg-[#F1E8DF] dark:bg-[#ff0000]",
-  },
-  {
-    name: "GraphQL",
-    icon: <SiGraphql className="w-8 h-8" />,
-    category: "API",
-    description: "Query language for APIs",
-    color: "text-[#A45F7B] dark:text-[#ffff00]",
-    bgColor: "bg-[#E57986] dark:bg-[#ff0000]",
-  },
-  {
-    name: "Jest",
-    icon: <SiJest className="w-8 h-8" />,
-    category: "Testing",
-    description: "JavaScript testing framework",
-    color: "text-[#E57986] dark:text-[#ffff00]",
-    bgColor: "bg-[#FFBB94] dark:bg-[#ff0000]",
-  },
+  // {
+  //   name: "Tailwind",
+  //   icon: <SiTailwindcss className="w-8 h-8" />,
+  //   category: "Styling",
+  //   description: "Utility-first CSS",
+  //   color: "text-[#6693B2] dark:text-[#ffff00]",
+  //   bgColor: "bg-[#A9C8DA] dark:bg-[#ff0000]",
+  // },
 ];
 
 const TechCard: React.FC<TechCardProps> = ({ tech, index }) => (
@@ -126,13 +140,6 @@ const TechCard: React.FC<TechCardProps> = ({ tech, index }) => (
     <div className="relative bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl dark:rounded-none border border-[#A9C8DA] dark:border-[#ff0000] hover:border-[#6693B2] dark:hover:border-[#00ff00] transition-all duration-300 shadow-md hover:shadow-xl text-center overflow-hidden dark:animate-pulse h-full">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#F1E8DF] dark:to-[#6C3B3F] opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-
-      {/* Category badge */}
-      {/* <div className="absolute top-3 right-3 px-2 py-1 bg-[#F1E8DF] dark:bg-[#6C3B3F] rounded-full dark:rounded-none shadow-sm dark:shadow-[#ff00ff]/30">
-        <span className="text-xs text-[#A45F7B] dark:text-[#00ffff] font-medium dark:animate-pulse">
-          {tech.category}
-        </span>
-      </div> */}
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col">
@@ -194,7 +201,7 @@ const TechHighlightCard: React.FC<TechHighlightCardProps> = ({
     whileInView={{ opacity: 1, [animationType]: 0 }}
     transition={{ delay, duration: 0.6 }}
     viewport={{ once: true }}
-    className="p-6 bg-[#F1E8DF] dark:bg-[#312E29] rounded-2xl border border-[#A9C8DA] dark:border-[#6C3B3F] text-center"
+    className="p-6 bg-[#F1E8DF] dark:bg-black rounded-2xl dark:rounded-none border border-[#A9C8DA] dark:border-[#ff0000] text-center hover:shadow-lg dark:hover:shadow-[#ff0000] transition-all duration-300 dark:animate-pulse"
   >
     <div
       className={`w-12 h-12 ${bgColor} rounded-full dark:rounded-none flex items-center justify-center mx-auto mb-4`}
@@ -335,7 +342,7 @@ const TechStack: React.FC = () => {
           {/* Tech stack highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <TechHighlightCard
-              count="8"
+              count="10+"
               title="Core Technologies"
               description="Modern tools for full-stack development"
               bgColor="bg-[#6693B2] dark:bg-[#00ff00]"
@@ -345,7 +352,7 @@ const TechStack: React.FC = () => {
               animationValue={-30}
             />
             <TechHighlightCard
-              count="9"
+              count="6"
               title="Categories"
               description="Diverse skill set across the stack"
               bgColor="bg-[#E57986] dark:bg-[#00ff00]"

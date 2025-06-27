@@ -64,7 +64,7 @@ export default function Experience() {
               title="Total Positions"
               description="Professional roles across different companies"
               color="bg-[#6693B2]"
-              darkColor="dark:bg-[#A99B8E]"
+              darkColor="dark:bg-[#ffff00]"
               delay={0.9}
               direction="x"
               xDirection={-30}
@@ -81,7 +81,7 @@ export default function Experience() {
               title="Technologies Used"
               description="Different tech stacks mastered"
               color="bg-[#E57986]"
-              darkColor="dark:bg-[#6C3B3F]"
+              darkColor="dark:bg-[#ffff00]"
               delay={1}
             />
 
@@ -90,7 +90,7 @@ export default function Experience() {
               title="Years Experience"
               description="Continuous professional growth"
               color="bg-[#A45F7B]"
-              darkColor="dark:bg-[#A99B8E]"
+              darkColor="dark:bg-[#ffff00]"
               delay={1.1}
               direction="x"
               xDirection={30}

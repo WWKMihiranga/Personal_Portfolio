@@ -19,7 +19,6 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState(0);
   return (
     <div className="relative">
-      {/* Background decorative elements */}
       <ThreeBackground />
       <BackgroundDecorations />
 

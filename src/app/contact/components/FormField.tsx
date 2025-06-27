@@ -71,7 +71,7 @@ export const FormField: React.FC<FormFieldProps> = ({
           placeholder={placeholder}
           className={`w-full ${
             type === "textarea" ? "pl-12" : "pl-12"
-          } pr-4 py-4 border rounded-2xl dark:rounded-none focus:outline-none transition-all duration-300 bg-[#F1E8DF] dark:bg-[#121212] text-gray-800 dark:text-[#ffffff] placeholder-gray-500 dark:placeholder-[#00ffff] ${
+          } pr-4 py-4 border rounded-2xl dark:rounded-none focus:outline-none transition-all duration-300 bg-[#F1E8DF] dark:bg-[#121212] text-gray-800 dark:text-[#ffffff] placeholder-gray-500 dark:placeholder-white-500 ${
             focused
               ? "border-[#6693B2] dark:border-[#00ff00] shadow-lg dark:animate-pulse"
               : "border-[#A9C8DA] dark:border-[#6C3B3F] hover:border-[#6693B2] dark:hover:border-[#ff00ff]"
