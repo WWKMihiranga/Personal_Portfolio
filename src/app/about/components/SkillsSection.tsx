@@ -240,20 +240,6 @@ const SkillsGrid = () => (
   </div>
 );
 
-const SummaryStats = () => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.8, duration: 0.6 }}
-    viewport={{ once: true }}
-    className="mt-16 flex flex-wrap justify-center gap-8"
-  >
-    {STATS_DATA.map((stat, index) => (
-      <StatsCard key={index} stat={stat} />
-    ))}
-  </motion.div>
-);
-
 const SkillsSection: React.FC = () => {
   return (
     <div className="relative">

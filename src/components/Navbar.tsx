@@ -3,7 +3,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ThemeSwitch from "./ThemeToggleButton";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -122,7 +121,7 @@ export default function Navbar() {
                   href="/contact"
                   className="px-6 py-2 bg-[#E57986] dark:bg-[#ff0000] text-white dark:text-[#ffffff] rounded-full dark:rounded-none font-medium hover:bg-[#6693B2] dark:hover:bg-[#00ff00] dark:hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl dark:animate-pulse"
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </Link>
               </motion.div>
             </div>
@@ -206,7 +205,7 @@ export default function Navbar() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="block w-full text-center px-6 py-3 bg-[#E57986] dark:bg-[#ff0000] text-white dark:text-white rounded-2xl dark:rounded-none font-bold hover:bg-[#A45F7B] dark:hover:bg-[#00ff00] transition-all duration-300 shadow-lg dark:animate-shake"
                     >
-                      Let's Talk
+                      Let&apos;s Talk
                     </Link>
                   </motion.div>
                 </div>

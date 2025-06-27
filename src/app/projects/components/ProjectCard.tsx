@@ -39,25 +39,25 @@ type Props = {
   project: Project;
 };
 
-const techIcons: Record<string, JSX.Element> = {
-  TypeScript: (
-    <SiTypescript className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
-  ),
-  "Next.js": (
-    <SiNextdotjs className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
-  ),
-  "Tailwind CSS": (
-    <SiTailwindcss className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
-  ),
-  "Three.js": (
-    <SiThreedotjs className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
-  ),
-  React: <SiReact className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />,
-  "Node.js": (
-    <SiNodedotjs className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
-  ),
-  Python: <SiPython className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />,
-};
+// const techIcons: Record<string, JSX.Element> = {
+//   TypeScript: (
+//     <SiTypescript className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
+//   ),
+//   "Next.js": (
+//     <SiNextdotjs className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
+//   ),
+//   "Tailwind CSS": (
+//     <SiTailwindcss className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
+//   ),
+//   "Three.js": (
+//     <SiThreedotjs className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
+//   ),
+//   React: <SiReact className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />,
+//   "Node.js": (
+//     <SiNodedotjs className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />
+//   ),
+//   Python: <SiPython className="w-4 h-4 text-[#6693B2] dark:text-[#00ffff]" />,
+// };
 
 const sampleProject: Project = {
   id: "1",

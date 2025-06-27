@@ -1,11 +1,9 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import RobotScene from "./RobotScene";
 import HeroContent from "./HeroContent";
 
 export default function Hero() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#F1E8DF] dark:bg-[#121212]">

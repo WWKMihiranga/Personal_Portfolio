@@ -1,6 +1,4 @@
-import { projects } from "@/lib/projects";
 import PageWrapper from "@/components/PageWrapper";
-import ProjectCard from "./components/ProjectCard";
 import Projects from "./components/Projects";
 
 export default function ProjectsPage() {

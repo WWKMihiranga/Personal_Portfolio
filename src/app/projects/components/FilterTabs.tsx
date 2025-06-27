@@ -1,16 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { FaJava } from "react-icons/fa";
-import { FiFilter } from "react-icons/fi";
-import {
-  SiMysql,
-  SiNextdotjs,
-  SiPython,
-  SiReact,
-  SiTailwindcss,
-  SiThreedotjs,
-  SiTypescript,
-} from "react-icons/si";
+import { SiMysql, SiNextdotjs, SiPython, SiTypescript } from "react-icons/si";
 
 // Tech stack filters
 export const techFilters = [

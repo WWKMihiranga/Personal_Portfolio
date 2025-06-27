@@ -152,8 +152,8 @@ const SectionHeader = () => (
       viewport={{ once: true }}
       className="text-lg text-gray-600 dark:text-[#ffffff] max-w-2xl mx-auto dark:animate-pulse"
     >
-      The credentials I've earned to validate my skills and knowledge in modern
-      technologies
+      The credentials I&apos;ve earned to validate my skills and knowledge in
+      modern technologies
     </motion.p>
   </div>
 );

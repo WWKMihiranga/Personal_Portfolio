@@ -17,44 +17,44 @@ import ThreeBackground from "@/components/ThreeBackground";
 import { FaArrowRight } from "react-icons/fa";
 
 // Constants
-const COLORS = {
-  light: {
-    primary: "#6693B2",
-    secondary: "#A45F7B",
-    background: "#F1E8DF",
-    border: "#A9C8DA",
-    text: "#312E29",
-    lightText: "#CFC6BD",
-    darkText: "#312E29",
-  },
-  dark: {
-    primary: "#A99B8E",
-    secondary: "#CFC6BD",
-    background: "#312E29",
-    border: "#6C3B3F",
-    text: "#EEEAE1",
-    lightText: "#CFC6BD",
-    darkText: "#312E29",
-  },
-};
+// const COLORS = {
+//   light: {
+//     primary: "#6693B2",
+//     secondary: "#A45F7B",
+//     background: "#F1E8DF",
+//     border: "#A9C8DA",
+//     text: "#312E29",
+//     lightText: "#CFC6BD",
+//     darkText: "#312E29",
+//   },
+//   dark: {
+//     primary: "#A99B8E",
+//     secondary: "#CFC6BD",
+//     background: "#312E29",
+//     border: "#6C3B3F",
+//     text: "#EEEAE1",
+//     lightText: "#CFC6BD",
+//     darkText: "#312E29",
+//   },
+// };
 
-const ANIMATION = {
-  fadeIn: {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    transition: { duration: 0.6 },
-  },
-  slideUp: {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-  },
-  scaleIn: {
-    initial: { opacity: 0, scale: 0.95 },
-    animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
+// const ANIMATION = {
+//   fadeIn: {
+//     initial: { opacity: 0 },
+//     animate: { opacity: 1 },
+//     transition: { duration: 0.6 },
+//   },
+//   slideUp: {
+//     initial: { opacity: 0, y: 30 },
+//     animate: { opacity: 1, y: 0 },
+//     transition: { duration: 0.6 },
+//   },
+//   scaleIn: {
+//     initial: { opacity: 0, scale: 0.95 },
+//     animate: { opacity: 1, scale: 1 },
+//     transition: { duration: 0.8, ease: "easeOut" },
+//   },
+// };
 
 interface ActionButtonProps {
   href?: string;

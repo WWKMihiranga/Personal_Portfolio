@@ -196,7 +196,7 @@ const ThreeBackground = () => {
 
       floatingElementsRef.current.forEach((element) => {
         const geometry = element.geometry;
-        const material = element.material;
+        // const material = element.material;
         geometry.dispose();
         // material.dispose();
       });

@@ -53,7 +53,8 @@ const BioContent = () => {
     {
       content: (
         <>
-          I'm a Computer Science undergraduate driven by a deep curiosity in
+          I&apos;m a Computer Science undergraduate driven by a deep curiosity
+          in
           <span className="font-semibold text-[#A45F7B] dark:text-[#ff0000] dark:animate-pulse">
             {" "}
             AI, machine learning
@@ -68,8 +69,9 @@ const BioContent = () => {
             {" "}
             front-end
           </span>{" "}
-          innovation. Since creating my first website at 15, I've loved crafting
-          intuitive, performant, and visually striking user experiences.
+          innovation. Since creating my first website at 15, I&apos;ve loved
+          crafting intuitive, performant, and visually striking user
+          experiences.
         </>
       ),
       className:
@@ -79,7 +81,7 @@ const BioContent = () => {
     {
       content: (
         <>
-          Right now, I'm exploring
+          Right now, I&apos;m exploring
           <span className="font-semibold text-[#A45F7B] dark:text-[#ff0000] dark:animate-pulse">
             {" "}
             machine learning models

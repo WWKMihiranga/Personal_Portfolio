@@ -18,12 +18,6 @@ const fadeInUp = {
   transition: { duration: 0.8, ease: "easeOut" },
 };
 
-const scaleIn = {
-  initial: { opacity: 0, scale: 0.8 },
-  animate: { opacity: 1, scale: 1 },
-  transition: { duration: 0.6 },
-};
-
 const fadeIn = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
@@ -175,7 +169,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-[#ffff00] mb-4 dark:animate-bounce dark:rounded-none"
           >
-            Let's Build Something{" "}
+            Let&apos;s Build Something{" "}
             <span className="text-[#6693B2] dark:text-[#00ffff] relative dark:animate-pulse dark:rounded-none">
               Amazing
               <motion.div
@@ -199,7 +193,7 @@ export default function ContactSection() {
             Interested in working together or want to learn more about my work?
             <br />
             <span className="text-[#A45F7B] dark:text-[#A99B8E] font-medium">
-              I'd love to hear from you!
+              I&apos;d love to hear from you!
             </span>
           </motion.p>
         </div>
@@ -269,8 +263,8 @@ export default function ContactSection() {
               </div>
             </div>
             <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-[#ffffff] leading-relaxed">
-              I'm always excited to work on innovative projects and collaborate
-              with amazing people. Whether it's{" "}
+              I&apos;m always excited to work on innovative projects and
+              collaborate with amazing people. Whether it&apos;s{" "}
               <span className="font-semibold text-[#6693B2] dark:text-[#ff00ff]">
                 AI-powered apps
               </span>
@@ -284,7 +278,7 @@ export default function ContactSection() {
                 {" "}
                 smart web experiences
               </span>
-              , let's make something incredible together.
+              , let&apos;s make something incredible together.
             </p>
           </div>
         </motion.div>

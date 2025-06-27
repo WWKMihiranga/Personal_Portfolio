@@ -8,7 +8,6 @@ import {
   FiPhone,
   FiClock,
   FiCalendar,
-  FiArrowRight,
   FiMessageCircle,
   FiExternalLink,
 } from "react-icons/fi";
@@ -105,7 +104,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-[#ffff00] mb-4 dark:animate-bounce dark:rounded-none"
           >
-            Let's Work{" "}
+            Let&apos;s Work{" "}
             <span className="text-[#6693B2] dark:text-[#00ffff] relative dark:animate-pulse dark:rounded-none">
               Together
               <motion.div
@@ -126,8 +125,8 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="text-lg text-gray-600 dark:text-[#ffffff] max-w-2xl mx-auto dark:animate-pulse"
           >
-            Ready to bring your ideas to life? Let's discuss your project and
-            explore how we can create something amazing together.
+            Ready to bring your ideas to life? Let&apos;s discuss your project
+            and explore how we can create something amazing together.
           </motion.p>
         </div>
 
@@ -276,8 +275,9 @@ export default function ContactSection() {
                   Start a Conversation
                 </h3>
                 <p className="text-sm sm:text-base text-gray-600 dark:text-[#ffffff] mb-6 sm:mb-8 leading-relaxed">
-                  Have a project in mind? I'd love to hear about it. Let's
-                  discuss how we can work together to bring your vision to life.
+                  Have a project in mind? I&apos;d love to hear about it.
+                  Let&apos;s discuss how we can work together to bring your
+                  vision to life.
                 </p>
 
                 {/* Contact Page Button */}

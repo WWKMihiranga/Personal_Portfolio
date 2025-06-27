@@ -194,7 +194,7 @@ const ContactHeader: React.FC = () => (
     >
       <div className="w-2 h-2 bg-[#6693B2] dark:bg-[#00ff00] rounded-full dark:rounded-none dark:animate-ping mr-2"></div>
       <span className="text-sm font-medium text-[#A45F7B] dark:text-[#ff00ff]">
-        Let's Connect
+        Let&apos;s Connect
       </span>
     </motion.div>
 
@@ -228,7 +228,7 @@ const ContactHeader: React.FC = () => (
       className="text-lg text-gray-600 dark:text-[#ffffff] max-w-2xl mx-auto dark:animate-pulse"
     >
       Have a project in mind or want to discuss opportunities? Feel free to
-      reach out - I'd love to hear from you.
+      reach out - I&apos;d love to hear from you.
     </motion.p>
   </motion.div>
 );

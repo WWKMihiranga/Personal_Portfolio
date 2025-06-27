@@ -2,7 +2,6 @@ import { projects } from "@/lib/projects";
 import { motion } from "framer-motion";
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { useFilters } from "./FilterTabs";
 import { techFilters } from "./FilterTabs";
 
 interface ProjectGridsProps {

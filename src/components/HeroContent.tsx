@@ -6,7 +6,7 @@ import ThreeBackground from "./ThreeBackground";
 import Lottie from "lottie-react";
 
 const PortfolioHomepage = () => {
-  const [isSystemDark, setIsSystemDark] = useState(false);
+  // const [isSystemDark, setIsSystemDark] = useState(false);
 
   const socialLinks = [
     {
@@ -124,7 +124,7 @@ const PortfolioHomepage = () => {
               <div className="order-2 md:order-2">
                 <motion.div variants={itemVariants} className="mb-10">
                   <h1 className="text-5xl md:text-7xl lg:text-6xl font-extrabold text-[#312E29] dark:text-[#ffff00] mb-6 dark:animate-pulse">
-                    Hi, I'm{" "}
+                    Hi, I&apos;m{" "}
                     <span className="text-[#6693B2] dark:text-[#ff0000] px-2 dark:animate-pulse">
                       Kavindu Mihiranga
                     </span>

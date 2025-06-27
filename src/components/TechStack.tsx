@@ -1,15 +1,9 @@
 "use client";
 
-import { FaNodeJs, FaReact, FaPython, FaJava, FaDocker } from "react-icons/fa";
-import {
-  SiFlutter,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiTypescript,
-  SiMysql,
-} from "react-icons/si";
+import { FaNodeJs, FaPython, FaJava, FaDocker } from "react-icons/fa";
+import { SiFlutter, SiNextdotjs, SiTypescript, SiMysql } from "react-icons/si";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 
 interface TechHighlightCardProps {
   count: string;
@@ -169,22 +163,22 @@ const TechCard: React.FC<TechCardProps> = ({ tech, index }) => (
   </motion.div>
 );
 
-const TechCategoryBadge: React.FC<TechCategoryBadgeProps> = ({
-  category,
-  index,
-}) => (
-  <motion.div
-    key={category}
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ delay: index * 0.1, duration: 0.4 }}
-    viewport={{ once: true }}
-    className="px-4 py-2 bg-[#F1E8DF] dark:bg-black border border-[#A9C8DA] dark:border-[#ff0000] rounded-full dark:rounded-none text-[#A45F7B] dark:text-[#ff00ff] font-medium hover:bg-[#A9C8DA] dark:hover:bg-[#6C3B3F] transition-colors duration-300 cursor-default dark:animate-pulse"
-    aria-label={`Technology category: ${category}`}
-  >
-    {category}
-  </motion.div>
-);
+// const TechCategoryBadge: React.FC<TechCategoryBadgeProps> = ({
+//   category,
+//   index,
+// }) => (
+//   <motion.div
+//     key={category}
+//     initial={{ opacity: 0, scale: 0.8 }}
+//     whileInView={{ opacity: 1, scale: 1 }}
+//     transition={{ delay: index * 0.1, duration: 0.4 }}
+//     viewport={{ once: true }}
+//     className="px-4 py-2 bg-[#F1E8DF] dark:bg-black border border-[#A9C8DA] dark:border-[#ff0000] rounded-full dark:rounded-none text-[#A45F7B] dark:text-[#ff00ff] font-medium hover:bg-[#A9C8DA] dark:hover:bg-[#6C3B3F] transition-colors duration-300 cursor-default dark:animate-pulse"
+//     aria-label={`Technology category: ${category}`}
+//   >
+//     {category}
+//   </motion.div>
+// );
 
 const TechHighlightCard: React.FC<TechHighlightCardProps> = ({
   count,

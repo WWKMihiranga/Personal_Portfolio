@@ -1,7 +1,7 @@
 // components/ThemeContext.ts
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext } from "react";
 
 type Theme = "light" | "dark";
 type ThemeContextType = {

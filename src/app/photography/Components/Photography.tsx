@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { photos, categories } from "@/lib/photography-data";
 import PhotographyHeader from "./PhotographyHeader";
 import CategoryFilter from "./CategoryFilter";

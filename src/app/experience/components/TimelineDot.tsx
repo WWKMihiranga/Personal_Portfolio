@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaBriefcase } from "react-icons/fa";
 import ExperienceCard from "./TimelineCard";
 import { ExperienceItem } from "@/lib/experience";
-import { IconType } from "react-icons/lib";
 import {
   SiTypescript,
   SiReact,

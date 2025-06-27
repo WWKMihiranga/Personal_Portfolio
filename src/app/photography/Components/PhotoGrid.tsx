@@ -269,8 +269,8 @@ interface PhotoContentProps {
 
 const PhotoContent = memo(function PhotoContent({
   photo,
-  index,
-}: PhotoContentProps) {
+}: // index,
+PhotoContentProps) {
   return (
     <div className="p-6 relative">
       <div className="absolute inset-0 opacity-[0.02] bg-gradient-to-br from-gray-900 via-transparent to-gray-900 dark:via-transparent pointer-events-none dark:animate-pulse" />

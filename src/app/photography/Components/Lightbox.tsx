@@ -223,15 +223,15 @@ function PhotoDetails({
   );
 }
 
-function CameraSettings({ settings }: { settings: string }) {
-  return (
-    <div className="p-4 bg-[#F1E8DF] dark:bg-black rounded-2xl dark:rounded-none dark:shadow-[0_0_20px_#ff0000] dark:animate-pulse">
-      <h4 className="font-semibold text-gray-800 dark:text-white mb-2 dark:animate-pulse">
-        Camera Settings
-      </h4>
-      <p className="text-sm text-gray-600 dark:text-[#00ff00] font-mono">
-        {settings}
-      </p>
-    </div>
-  );
-}
+// function CameraSettings({ settings }: { settings: string }) {
+//   return (
+//     <div className="p-4 bg-[#F1E8DF] dark:bg-black rounded-2xl dark:rounded-none dark:shadow-[0_0_20px_#ff0000] dark:animate-pulse">
+//       <h4 className="font-semibold text-gray-800 dark:text-white mb-2 dark:animate-pulse">
+//         Camera Settings
+//       </h4>
+//       <p className="text-sm text-gray-600 dark:text-[#00ff00] font-mono">
+//         {settings}
+//       </p>
+//     </div>
+//   );
+// }

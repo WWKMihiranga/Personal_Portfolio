@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { EXPERIENCE_DATA } from "@/lib/experience";
 import {
-  FiExternalLink,
   FiMapPin,
   FiCalendar,
   FiAward,
@@ -121,8 +120,8 @@ export default function Timeline() {
               viewport={{ once: true }}
               className="text-lg text-gray-600 dark:text-[#CFC6BD] max-w-2xl mx-auto"
             >
-              My career path and the valuable experiences I've gained along the
-              way
+              My career path and the valuable experiences I&apos;ve gained along
+              the way
             </motion.p>
           </motion.div>
 

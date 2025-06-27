@@ -1,14 +1,8 @@
 "use client";
 
-import { projects } from "@/lib/projects";
-import ProjectCard from "./ProjectCard";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { FiGithub, FiExternalLink, FiFilter } from "react-icons/fi";
 import BackgroundDecorations from "./BackgroundDecorations";
 import ProjectHeader from "./ProjectHeader";
 import FilterTabs from "./FilterTabs";
-import { Filters } from "./FilterTabs";
 import ProjectGrids from "./ProjectGrids";
 import ProjectsStats from "./ProjectsStats";
 import GitHub from "./GitHub";
