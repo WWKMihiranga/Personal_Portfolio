@@ -32,20 +32,35 @@ export default function ProjectCarousel({ projects }: Props) {
 
   // Auto-play functionality
   useEffect(() => {
-    if (isAutoPlay && inView) {
-      autoPlayRef.current = setInterval(() => {
-        setCurrentIndex((prev) =>
-          prev === projects.length - 1 ? 0 : prev + 1
-        );
-      }, 5000);
-    } else if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-    }
+    let isMounted = true;
 
-    return () => {
+    const clearExistingInterval = () => {
       if (autoPlayRef.current) {
         clearInterval(autoPlayRef.current);
+        autoPlayRef.current = null;
       }
+    };
+
+    const startNewInterval = () => {
+      if (!isMounted) return;
+
+      clearExistingInterval();
+
+      if (isAutoPlay && inView) {
+        autoPlayRef.current = setInterval(() => {
+          setCurrentIndex((prev) => {
+            if (!isMounted) return prev;
+            return prev === projects.length - 1 ? 0 : prev + 1;
+          });
+        }, 8000);
+      }
+    };
+
+    startNewInterval();
+
+    return () => {
+      isMounted = false;
+      clearExistingInterval();
     };
   }, [isAutoPlay, inView, projects.length]);
 
@@ -168,14 +183,14 @@ export default function ProjectCarousel({ projects }: Props) {
                 whileTap={{ scale: 0.95 }}
                 onClick={toggleAutoPlay}
                 className={`
-      flex items-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-6 sm:py-3 
-      rounded-full dark:rounded-none border transition-all duration-300 
-      hover:shadow-lg backdrop-blur-sm text-xs sm:text-sm
-      ${
-        isAutoPlay
-          ? "bg-[#6693B2] dark:bg-[#ff0000] text-white dark:text-[#000000] border-[#6693B2] dark:border-[#ff0000] dark:animate-pulse"
-          : "bg-transparent dark:bg-transparent text-[#6693B2] dark:text-[#00ff00] border-[#A9C8DA] dark:border-[#00ff00]"
-      }
+              flex items-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-6 sm:py-3 
+              rounded-full dark:rounded-none border transition-all duration-300 
+              hover:shadow-lg backdrop-blur-sm text-xs sm:text-sm
+              ${
+                isAutoPlay
+                  ? "bg-[#6693B2] dark:bg-[#ff0000] text-white dark:text-[#000000] border-[#6693B2] dark:border-[#ff0000] dark:animate-pulse"
+                  : "bg-transparent dark:bg-transparent text-[#6693B2] dark:text-[#00ff00] border-[#A9C8DA] dark:border-[#00ff00]"
+              }
                 `}
               >
                 {isAutoPlay ? (
@@ -361,10 +376,7 @@ function ProjectCard({ project, isActive }: ProjectCardProps) {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm dark:bg-[#ff0000]/80"
-              style={{ backgroundColor: "rgba(102, 147, 178, 0.9)" }}
-            >
+            <div className="absolute bg-black/60 inset-0 opacity-0 group-hover:opacity-80 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm dark:bg-[#ff0000]/80">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 whileHover={{ scale: 1, opacity: 1 }}

@@ -3,8 +3,8 @@ import Experience from "./components/Experience";
 
 export default function ExperiencePage() {
   return (
-    <PageWrapper>
+    <section className="p-8">
       <Experience />
-    </PageWrapper>
+    </section>
   );
 }
