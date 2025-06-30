@@ -185,7 +185,7 @@ const ThreeBackground = () => {
     // Update sphere color
     const sphereMaterial = sphereRef.current
       .material as THREE.MeshBasicMaterial;
-    sphereMaterial.color.setHex(resolvedTheme === "dark" ? 0x00ff00 : 0x6693b2);
+    sphereMaterial.color.setHex(resolvedTheme === "dark" ? 0x000000 : 0x6693b2);
 
     // Update floating elements colors
     floatingElementsRef.current.forEach((element) => {
