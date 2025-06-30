@@ -9,8 +9,7 @@ import TechStack from "@/components/TechStack";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Kavindu Mihiranga | Full-Stack Developer | Next.js, Python & AI Portfolio",
+  title: "Kavindu Mihiranga | Full-Stack Developer | Portfolio",
 
   description:
     "Welcome to the portfolio of Kavindu Mihiranga, a Full-Stack Developer from Sri Lanka specializing in Next.js, Python (AI/ML), and Flutter. Explore my projects, experience, and creative work.",
@@ -61,9 +60,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* <ThemeProvider> */}
       <Hero />
-      {/* <About/> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <section className="p-8">
           <About />
@@ -73,7 +70,6 @@ export default function HomePage() {
           <ContactSection />
         </section>
       </div>
-      {/* </ThemeProvider> */}
     </>
   );
 }

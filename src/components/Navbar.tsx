@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeSwitch from "./ThemeToggleButton";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -43,40 +44,50 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4 lg:py-6">
             {/* Logo with enhanced styling */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Link href="/" className="relative group">
-                <div className="flex items-center space-x-3">
-                  {/* Logo icon */}
-                  <div className="w-10 h-10 bg-[#6693B2] dark:bg-[#00ff00] rounded-2xl dark:rounded-none flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 dark:animate-shake">
-                    <span className="text-white dark:text-black font-bold text-lg">
-                      K
-                    </span>
-                  </div>
-
-                  {/* Logo text */}
-                  <div className="hidden sm:block">
-                    <span className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white transition-colors duration-300">
-                      My
-                      <span className="text-[#6693B2] dark:text-[#ff00ff]">
-                        Portfolio
+            <div className="flex items-center space-x-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link href="/" className="relative group">
+                  <div className="flex items-center space-x-3">
+                    {/* Logo icon */}
+                    <div className="w-10 h-10 bg-[#6693B2] dark:bg-[#00ff00] rounded-2xl dark:rounded-none flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 dark:animate-shake">
+                      <span className="text-white dark:text-black font-bold text-lg">
+                        K
                       </span>
-                    </span>
-                    <motion.div
-                      initial={{ scaleX: 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="h-0.5 bg-[#E57986] dark:bg-[#ff0000] dark:animate-ping origin-left mt-1"
-                    ></motion.div>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
+                    </div>
 
-            {/* <ThemeSwitch /> */}
+                    {/* Logo text */}
+                    <div className="hidden sm:block">
+                      <span className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white transition-colors duration-300">
+                        My
+                        <span className="text-[#6693B2] dark:text-[#ff00ff]">
+                          Portfolio
+                        </span>
+                      </span>
+                      <motion.div
+                        initial={{ scaleX: 0 }}
+                        whileHover={{ scaleX: 1 }}
+                        transition={{ duration: 0.3 }}
+                        className="h-0.5 bg-[#E57986] dark:bg-[#ff0000] dark:animate-ping origin-left mt-1"
+                      ></motion.div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Theme switch for mobile - hidden on desktop */}
+              <div className="lg:hidden">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <ThemeSwitch />
+                </motion.div>
+              </div>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-2">
@@ -110,6 +121,15 @@ export default function Navbar() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* Theme switch for desktop */}
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="ml-2"
+              >
+                <ThemeSwitch />
+              </motion.div>
 
               {/* Contact CTA */}
               <motion.div

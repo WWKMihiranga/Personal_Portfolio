@@ -1,5 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from "react";
 import * as THREE from "three";
+import { useTheme } from "next-themes";
 
 const ThreeBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -9,18 +10,19 @@ const ThreeBackground = () => {
   const animationRef = useRef<number | null>(null);
   const floatingElementsRef = useRef<THREE.Mesh[]>([]);
   const [isMounted, setIsMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   // Initialize color scheme state
-  const getInitialColorScheme = () => {
-    if (typeof window !== "undefined") {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    }
-    return "light"; // Default to light mode on server
-  };
+  // const getInitialColorScheme = () => {
+  //   if (typeof window !== "undefined") {
+  //     return window.matchMedia("(prefers-color-scheme: dark)").matches
+  //       ? "dark"
+  //       : "light";
+  //   }
+  //   return "light"; // Default to light mode on server
+  // };
 
-  const colorSchemeRef = useRef<"light" | "dark">(getInitialColorScheme());
+  // const colorSchemeRef = useRef<"light" | "dark">(getInitialColorScheme());
 
   const initThreeScene = useCallback(() => {
     if (!canvasRef.current || !isMounted) return;
@@ -45,7 +47,7 @@ const ThreeBackground = () => {
     // Create floating geometric shapes
     const geometry = new THREE.IcosahedronGeometry(1, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: colorSchemeRef.current === "dark" ? 0x000000 : 0x6693b2,
+      color: resolvedTheme === "dark" ? 0x000000 : 0x6693b2,
       wireframe: true,
       transparent: true,
       opacity: 0.5,
@@ -57,7 +59,7 @@ const ThreeBackground = () => {
     // Additional floating elements
     const smallGeometry = new THREE.TetrahedronGeometry(0.5);
     const smallMaterial = new THREE.MeshBasicMaterial({
-      color: colorSchemeRef.current === "dark" ? 0xff00ff : 0xe57986,
+      color: resolvedTheme === "dark" ? 0xff00ff : 0xe57986,
       wireframe: true,
       transparent: true,
       opacity: 0.5,
@@ -82,33 +84,8 @@ const ThreeBackground = () => {
     sphereRef.current = sphere;
     floatingElementsRef.current = floatingElements;
 
-    // Only add event listeners on client side
-    const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleColorSchemeChange = (e: MediaQueryListEvent) => {
-      colorSchemeRef.current = e.matches ? "dark" : "light";
-
-      if (sphereRef.current) {
-        const material = sphereRef.current.material as THREE.MeshBasicMaterial;
-        material.color.setHex(e.matches ? 0x00ff00 : 0x6693b2);
-      }
-
-      floatingElementsRef.current.forEach((element) => {
-        const material = element.material as THREE.MeshBasicMaterial;
-        material.color.setHex(e.matches ? 0xff00ff : 0xe57986);
-      });
-    };
-
-    colorSchemeQuery.addEventListener("change", handleColorSchemeChange);
-
-    return {
-      scene,
-      renderer,
-      camera,
-      cleanup: () => {
-        colorSchemeQuery.removeEventListener("change", handleColorSchemeChange);
-      },
-    };
-  }, [isMounted]);
+    return { scene, renderer, camera };
+  }, [isMounted, resolvedTheme]);
 
   const animate = useCallback((camera: THREE.PerspectiveCamera) => {
     if (!sphereRef.current) return;
@@ -165,7 +142,7 @@ const ThreeBackground = () => {
   useEffect(() => {
     if (!isMounted) return;
 
-    const { camera, cleanup } = initThreeScene() || {};
+    const { camera } = initThreeScene() || {};
 
     if (camera) {
       animate(camera);
@@ -175,7 +152,6 @@ const ThreeBackground = () => {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      cleanup?.();
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("resize", handleResize);
 
@@ -196,12 +172,27 @@ const ThreeBackground = () => {
 
       floatingElementsRef.current.forEach((element) => {
         const geometry = element.geometry;
-        // const material = element.material;
+        const material = element.material as THREE.Material;
         geometry.dispose();
-        // material.dispose();
+        material.dispose();
       });
     };
   }, [initThreeScene, animate, handleMouseMove, handleResize, isMounted]);
+
+  useEffect(() => {
+    if (!sphereRef.current || floatingElementsRef.current.length === 0) return;
+
+    // Update sphere color
+    const sphereMaterial = sphereRef.current
+      .material as THREE.MeshBasicMaterial;
+    sphereMaterial.color.setHex(resolvedTheme === "dark" ? 0x00ff00 : 0x6693b2);
+
+    // Update floating elements colors
+    floatingElementsRef.current.forEach((element) => {
+      const material = element.material as THREE.MeshBasicMaterial;
+      material.color.setHex(resolvedTheme === "dark" ? 0xff00ff : 0xe57986);
+    });
+  }, [resolvedTheme]);
 
   // Only render canvas on client side
   if (!isMounted) {
